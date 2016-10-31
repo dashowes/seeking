@@ -1,0 +1,20 @@
+<div layout="column" layout-padding>
+ 
+  <div layout="column" layout-gt-sm="row">
+    <div flex="50">
+      <md-card dir-paginate="question in survey.questions | itemsPerPage: survey.perPage" total-items="survey.questionsCount">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Survey</span>
+            <form ng-submit="survey.onSubmit()" name="survey.form" novalidate>
+            <formly-form model="survey.model" fields="survey.fields" options="survey.options" form="survey.form">
+                <md-button type="submit" ng-disabled="survey.form.$invalid">Next</md-button>
+                <md-button type="button" ng-click="survey.options.resetModel()">Reset</md-button>
+            </formly-form>
+            </form>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </div>
+  </div>
+</div>
