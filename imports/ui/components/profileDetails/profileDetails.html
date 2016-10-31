@@ -1,0 +1,35 @@
+<div class="detailsform" layout="column" layout-padding>
+  <div layout="column" layout-gt-sm="row"  layout-padding>
+    <form flex layout="column">
+      <md-input-container class="detailsinput">
+        <label>First Name</label>
+        <input ng-model="profileDetails.profile.firstName" ng-disabled="!profileDetails.isLoggedIn">
+      </md-input-container>
+ 
+      <md-input-container class="detailsinput">
+        <label>Last Name</label>
+        <input ng-model="profileDetails.profile.lastName" ng-disabled="!profileDetails.isLoggedIn">
+      </md-input-container>
+      
+      <md-input-container class="detailsinput">
+        <label>Zipcode</label>
+        <input ng-model="profileDetails.profile.zip" ng-disabled="!profileDetails.isLoggedIn">
+      </md-input-container>
+      
+      <md-input-container class="detailsinput">
+        <label>Bio</label>
+        <input ng-model="profileDetails.profile.bio" ng-disabled="!profileDetails.isLoggedIn">
+      </md-input-container>
+      
+      <md-input-container class="detailsinput">
+        <label>Favorite Bands</label>
+        <input ng-model="profileDetails.profile.favBands" ng-disabled="!profileDetails.isLoggedIn">
+      </md-input-container>
+ 
+      <div layout="row">
+        <md-button ng-click="profileDetails.save()" ui-sref="profiles" class="md-raised">Save</md-button>
+      </div>
+    </form>
+  </div>
+</div>
+

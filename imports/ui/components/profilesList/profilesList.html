@@ -1,0 +1,31 @@
+<div layout="column" layout-padding>
+  <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
+  <div class="center" ng-hide="profilesList.isLoggedIn">
+    <h2 ui-sref="promo" id="promoprompt">Enter your promo code</h2>
+    <h3>or</h3>
+    <h2 ui-sref="login" id="loginprompt">Log in to create a profile!</h2>
+  </div>
+ 
+  <div layout="column" layout-gt-sm="row">
+    <div flex="50">
+      <md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
+              {{profile.firstName}} {{profile.lastName}}
+            </span>
+            <span class="md-subhead">{{profile.zip}}</span>
+            <span class="md-subhead">{{profile.bio}}</span>
+            <span class="md-subhead">Favorite Bands: {{profile.favBands}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <profile-remove profile="profile"></profile-remove>
+      </md-card>
+    </div>
+  </div>
+  
+  <div class="smedia-icon-container">
+    <a href="http://facebook.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/fbblack.png"></a>
+    <a href="http://twitter.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/twblack.png"></a>
+  </div>
+</div>
