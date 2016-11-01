@@ -8,13 +8,15 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import template from './survey.html';
 import { Profiles } from '../../../api/profiles/index';
-//import Questions
- 
+
 class survey {
-  constructor($scope, $reactive) {
+  constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
     $reactive(this).attach($scope);
+    
+    this.profileId = $stateParams.profileId;
+    this.questionId = $stateParams.questionId;
     
     this.perPage = 1;
     this.page = 1;
@@ -30,21 +32,29 @@ class survey {
        sort: this.getReactively('sort')
     }, this.getReactively('searchText')
     ]);
- 
+    
     this.helpers({
-      questions() {
-        return Questions.find({}, {
-          sort : this.getReactively('sort')
+      profile() {
+        return Profiles.findOne({
+          _id: $stateParams.profileId
         });
+      },
+      question() {
+          return Profiles.questions.findOne({
+              _id: $stateParams.profileId.questionId
+          });
       },
       questionsCount() {
         return Counts.get('numberOfQuestions');
       },
-      isLoggedIn() {
-        return !!Meteor.userId();
+      users() {
+        return Meteor.users.find({});
       },
       currentUserId() {
         return Meteor.userId();
+      },
+      isLoggedIn() {
+        return !!Meteor.userId();
       }
     });
   }
@@ -79,9 +89,18 @@ export default angular.module(name, [
  
 function config($stateProvider) {
   'ngInject';
-  $stateProvider
-    .state('survey', {
-      url: '/survey',
-      template: '<survey></survey>'
-    });
+  
+  $stateProvider.state('survey', {
+    url: '/profiles/:profileId/:questionId',
+    template: '<survey></survey>',
+    resolve: {
+      currentUser($q) {
+        if (Meteor.userId() === null) {
+          return $q.reject('AUTH_REQUIRED');
+        } else {
+          return $q.resolve();
+        }
+      }
+    }
+  });
 }

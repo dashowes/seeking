@@ -11,6 +11,7 @@ import { name as ProfilesSort } from '../profilesSort/profilesSort';
 import { name as ProfileAddButton } from '../profileAddButton/profileAddButton';
 import { name as ProfileAdd } from '../profileAdd/profileAdd';
 import { name as ProfileRemove } from '../profileRemove/profileRemove';
+import { name as TakeSurveyButton } from '../takeSurveyButton/takeSurveyButton';
  
 class ProfilesList {
   constructor($scope, $reactive) {
@@ -73,7 +74,8 @@ export default angular.module(name, [
   ProfilesSort,
   ProfileAdd,
   ProfileAddButton,
-  ProfileRemove
+  ProfileRemove,
+  TakeSurveyButton
 ]).component(name, {
   template,
   controllerAs: name,
