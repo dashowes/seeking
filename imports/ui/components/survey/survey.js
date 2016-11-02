@@ -2,9 +2,6 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
-import formly from 'angular-formly';
-
-import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import template from './survey.html';
 import { Profiles } from '../../../api/profiles/index';
@@ -16,22 +13,8 @@ class survey {
     $reactive(this).attach($scope);
     
     this.profileId = $stateParams.profileId;
-    this.questionId = $stateParams.profileId.questionId;
-    
-    this.perPage = 1;
-    this.page = 1;
-    this.sort = {
-      name: 1
-    };
-    this.searchText = '';
-    
+
     this.subscribe('profiles');
-    this.subscribe('questions', () => [{
-       limit: parseInt(this.perPage),
-       skip: parseInt((this.getReactively('page') - 1) * this.perPage),
-       sort: this.getReactively('sort')
-    }, this.getReactively('searchText')
-    ]);
     
     this.helpers({
       profile() {
@@ -43,9 +26,6 @@ class survey {
           return Profiles.questions.findOne({
               _id: $stateParams.profileId.questionId
           });
-      },
-      questionsCount() {
-        return Counts.get('numberOfQuestions');
       },
       users() {
         return Meteor.users.find({});
@@ -61,14 +41,6 @@ class survey {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
-  }
-  
-  pageChanged(newPage) {
-    this.page = newPage;
-  }
-  
-  sortChanged(sort) {
-    this.sort = sort;
   }
 }
  
@@ -98,33 +70,33 @@ function config($stateProvider, $urlRouterProvider) {
       })
       
       .state('survey.favRecords', {
-          url: '/favrecords',
-          template: '<survey-favrecords></survey-favrecords>'
+          url: '/favRecords',
+          template: '<survey-fav-records></survey-fav-records>'
       })
       
       .state('survey.favProducers', {
-          url: '/favproducers',
-          template: '<survey-favproducers></survey-favproducers>'
+          url: '/favProducers',
+          template: '<survey-fav-producers></survey-fav-producers>'
       })
       
       .state('survey.favLabels', {
-          url: '/favlabels',
-          template: '<survey-favlabels></survey-favlabels>'
+          url: '/favLabels',
+          template: '<survey-fav-labels></survey-fav-labels>'
       })
       
       .state('survey.skillLevel', {
-          url: '/skilllevel',
+          url: '/skillLevel',
           template: '<survey-skilllevel></survey-skilllevel>'
       })
       
       .state('survey.instrumentYears', {
-          url: '/instrumentyears',
-          template: '<survey-instrumentyears></survey-instrumentyears>'
+          url: '/instrumentYears',
+          template: '<survey-instrument-years></survey-instrument-years>'
       })
       
       .state('survey.liveBand', {
-          url: '/liveband',
-          template: '<survey-liveband></survey-liveband>'
+          url: '/liveBand',
+          template: '<survey-live-band></survey-live-band>'
       })
       
       .state('survey.gear', {
@@ -148,13 +120,13 @@ function config($stateProvider, $urlRouterProvider) {
       })
       
       .state('survey.practiceTime', {
-          url: '/practicetime',
-          template: '<survey-practicetime></survey-practicetime>'
+          url: '/practiceTime',
+          template: '<survey-practice-time></survey-practice-time>'
       })
       
       .state('survey.localShows', {
-          url: '/localshows',
-          template: '<survey-localshows></survey-localshows>'
+          url: '/localShows',
+          template: '<survey-local-shows></survey-local-shows>'
       })
       
       .state('survey.touring', {
@@ -173,13 +145,13 @@ function config($stateProvider, $urlRouterProvider) {
       })
       
       .state('survey.originalOrCover', {
-          url: '/originalorcover',
-          template: '<survey-originalorcover></survey-originalorcover>'
+          url: '/originalOrCover',
+          template: '<survey-original-or-cover></survey-original-or-cover>'
       })
       
       .state('survey.occasionalCover', {
           url: '/occasionalCover',
-          template: '<survey-occasionalcover></survey-occasionalcover>'
+          template: '<survey-occasional-cover></survey-occasional-cover>'
       })
       
       .state('survey.venues', {
@@ -188,13 +160,13 @@ function config($stateProvider, $urlRouterProvider) {
       })
       
       .state('survey.venuesBad', {
-          url: '/venuesbad',
-          template: '<survey-venuesbad></survey-venuesbad>'
+          url: '/venuesBad',
+          template: '<survey-venues-bad></survey-venues-bad>'
       })
       
       .state('survey.practiceSpace', {
-          url: '/practicespace',
-          template: '<survey-practicespace></survey-practicespace>'
+          url: '/practiceSpace',
+          template: '<survey-practice-space></survey-practice-space>'
       })
       
       .state('survey.vehicle', {
@@ -223,38 +195,38 @@ function config($stateProvider, $urlRouterProvider) {
       })
       
       .state('survey.familyOrBusiness', {
-          url: '/familyorbusiness',
-          template: '<survey-familyorbusiness></survey-familyorbusiness>'
+          url: '/familyOrBusiness',
+          template: '<survey-family-or-business></survey-family-or-business>'
       })
       
       .state('survey.bandImage', {
-          url: '/bandimage',
-          template: '<survey-bandimage></survey-bandimage>'
+          url: '/bandImage',
+          template: '<survey-band-image></survey-band-image>'
       })
       
       .state('survey.favMovies', {
-          url: '/favmovies',
-          template: '<survey-favmovies></survey-favmovies>'
+          url: '/favMovies',
+          template: '<survey-fav-movies></survey-fav-movies>'
       })
       
       .state('survey.favTvShows', {
-          url: '/favtvshows',
-          template: '<survey-favtvshows></survey-favtvshows>'
+          url: '/favTvShows',
+          template: '<survey-fav-tv-shows></survey-fav-tv-shows>'
       })
       
       .state('survey.socialPolitics', {
-          url: '/socialpolitics',
-          template: '<survey-socialpolitics></survey-socialpolitics>'
+          url: '/socialPolitics',
+          template: '<survey-social-politics></survey-social-politics>'
       })
       
       .state('survey.fiscalPolitics', {
-          url: '/fiscalpolitics',
-          template: '<survey-fiscalpolitics></survey-fiscalpolitics>'
+          url: '/fiscalPolitics',
+          template: '<survey-fiscal-politics></survey-fiscal-politics>'
       })
       
       .state('survey.politicsBand', {
-          url: '/politicsband',
-          template: '<survey-politicsband></survey-politicsband>'
+          url: '/politicsBand',
+          template: '<survey-politics-band></survey-politics-band>'
       })
       
       .state('survey.religion', {
@@ -263,8 +235,8 @@ function config($stateProvider, $urlRouterProvider) {
       })
       
       .state('survey.religionBand', {
-          url: '/religionband',
-          template: '<survey-religionband></survey-religionband>'
+          url: '/religionBand',
+          template: '<survey-religion-band></survey-religion-band>'
       })
       
       .state('survey.drink', {
