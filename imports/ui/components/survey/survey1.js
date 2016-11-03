@@ -4,6 +4,7 @@ import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
 import template from './survey.html';
+
 import { Profiles } from '../../../api/profiles/index';
 
 class survey {
@@ -50,8 +51,7 @@ const name = 'survey';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  utilsPagination,
-  formly
+  utilsPagination
 ]).component(name, {
   template,
   controllerAs: name,
@@ -81,12 +81,12 @@ function config($stateProvider, $urlRouterProvider) {
       
       .state('survey.favLabels', {
           url: '/favLabels',
-          template: '<survey-fav-labels></survey-fav-labels>'
+          template: '<surve1y-fav-labels></survey-fav-labels>'
       })
       
       .state('survey.skillLevel', {
           url: '/skillLevel',
-          template: '<survey-skilllevel></survey-skilllevel>'
+          template: '<survey-skill-level></survey-skill-level>'
       })
       
       .state('survey.instrumentYears', {
@@ -94,7 +94,7 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey-instrument-years></survey-instrument-years>'
       })
       
-      .state('survey.liveBand', {
+      .state('survey2.liveBand', {
           url: '/liveBand',
           template: '<survey-live-band></survey-live-band>'
       })

@@ -4,6 +4,7 @@ import ngMaterial from 'angular-material';
 import uiRouter from 'angular-ui-router';
  
 import template from './seeking.html';
+
 import { name as ProfilesList } from '../profilesList/profilesList';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 import { name as Navigation } from '../navigation/navigation';
@@ -13,7 +14,8 @@ import { name as About } from '../about/about';
 import { name as Terms } from '../terms/terms';
 import { name as Privacy } from '../privacy/privacy';
 import { name as Promo } from '../promo/promo';
-import { name as Survey } from '../survey/survey';
+import { name as Survey1 } from '../survey/survey1';
+
  
 class Seeking {}
  
@@ -33,7 +35,7 @@ export default angular.module(name, [
   Terms,
   Privacy,
   Promo,
-  Survey,
+  Survey1,
   'accounts.ui'
 ]).component(name, {
   template,
