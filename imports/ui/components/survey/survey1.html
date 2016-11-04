@@ -2,6 +2,7 @@
  
   <div layout="column" layout-gt-sm="row">
     <div flex="50">
+        
         <div class="surveyheader">
             <span class="md-headline">Survey</span>
             <div id="status-buttons" class="text-center">
@@ -13,15 +14,10 @@
             </div>
         </div>
             
-      <md-card>
-        <md-card-title>
-          <md-card-title-text>
-            <div class="surveyquestioncontainer">
-                <div ui-view></div>
-            </div>
-          </md-card-title-text>
-        </md-card-title>
-      </md-card>
+        <form id="survey-form" ng-submit="processForm()">
+            <div id="survey-views" ui-view></div>
+        </form>
+        
     </div>
   </div>
 </div>

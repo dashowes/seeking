@@ -3,11 +3,11 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey2.html';
+import template from './survey5.html';
 
 import { Profiles } from '../../../api/profiles/index';
 
-class survey2 {
+class survey5 {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
@@ -45,7 +45,7 @@ class survey2 {
   }
 }
  
-const name = 'survey2';
+const name = 'survey5';
  
 // create a module
 export default angular.module(name, [
@@ -55,7 +55,7 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: survey2
+  controller: survey5
 })
   .config(config);
  
@@ -64,36 +64,36 @@ function config($stateProvider, $urlRouterProvider) {
   
   $stateProvider
   
-    .state('survey2', {
-        url: '/survey2',
-        template: '<survey2></survey2>'
+    .state('survey5', {
+        url: '/survey5',
+        template: '<survey5></survey5>'
     })
       
-      .state('survey2.liveBand', {
-          url: '/liveBand',
-          template: '<survey2-live-band></survey2-live-band>'
+      .state('survey5.vehicle', {
+          url: '/vehicle',
+          template: '<survey5-vehicle></survey5-vehicle>'
       })
       
-      .state('survey2.gear', {
-          url: '/gear',
-          template: '<survey2-gear></survey2-gear>'
+      .state('survey5.van', {
+          url: '/van',
+          template: '<survey5-van></survey5-van>'
       })
       
-      .state('survey2.priority', {
-          url: '/priority',
-          template: '<survey2-priority></survey2-priority>'
+      .state('survey5.sing', {
+          url: '/sing',
+          template: '<survey5-sing></survey5-sing>'
       })
       
-      .state('survey2.production', {
-          url: '/production',
-          template: '<survey2-production></survey2-production>'
+      .state('survey5.harmonize', {
+          url: '/harmonize',
+          template: '<survey5-harmonize></survey5-harmonize>'
       })
       
-      .state('survey2.money', {
-          url: '/money',
-          template: '<survey2-money></survey2-money>'
+      .state('survey5.merch', {
+          url: '/merch',
+          template: '<survey5-merch></survey5-merch>'
       });
   
-  $urlRouterProvider.otherwise('/survey2');
+  $urlRouterProvider.otherwise('/survey5');
   
 }

@@ -3,11 +3,11 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey2.html';
+import template from './survey7.html';
 
 import { Profiles } from '../../../api/profiles/index';
 
-class survey2 {
+class survey7 {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
@@ -45,7 +45,7 @@ class survey2 {
   }
 }
  
-const name = 'survey2';
+const name = 'survey7';
  
 // create a module
 export default angular.module(name, [
@@ -55,7 +55,7 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: survey2
+  controller: survey7
 })
   .config(config);
  
@@ -64,36 +64,36 @@ function config($stateProvider, $urlRouterProvider) {
   
   $stateProvider
   
-    .state('survey2', {
-        url: '/survey2',
-        template: '<survey2></survey2>'
+    .state('survey7', {
+        url: '/survey7',
+        template: '<survey7></survey7>'
     })
       
-      .state('survey2.liveBand', {
-          url: '/liveBand',
-          template: '<survey2-live-band></survey2-live-band>'
+      .state('survey7.politicsBand', {
+          url: '/politicsBand',
+          template: '<survey7-politics-band></survey7-politics-band>'
       })
       
-      .state('survey2.gear', {
-          url: '/gear',
-          template: '<survey2-gear></survey2-gear>'
+      .state('survey7.religion', {
+          url: '/religion',
+          template: '<survey7-religion></survey7-religion>'
       })
       
-      .state('survey2.priority', {
-          url: '/priority',
-          template: '<survey2-priority></survey2-priority>'
+      .state('survey7.religionBand', {
+          url: '/religionBand',
+          template: '<survey7-religion-band></survey7-religion-band>'
       })
       
-      .state('survey2.production', {
-          url: '/production',
-          template: '<survey2-production></survey2-production>'
+      .state('survey7.drink', {
+          url: '/drink',
+          template: '<survey7-drink></survey7-drink>'
       })
       
-      .state('survey2.money', {
-          url: '/money',
-          template: '<survey2-money></survey2-money>'
+      .state('survey7.drugs', {
+          url: '/drugs',
+          template: '<survey7-drugs></survey7-drugs>'
       });
-  
-  $urlRouterProvider.otherwise('/survey2');
+      
+  $urlRouterProvider.otherwise('/survey7');
   
 }

@@ -3,11 +3,11 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey.html';
+import template from './survey1.html';
 
 import { Profiles } from '../../../api/profiles/index';
 
-class survey {
+class survey1 {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
@@ -45,7 +45,7 @@ class survey {
   }
 }
  
-const name = 'survey';
+const name = 'survey1';
  
 // create a module
 export default angular.module(name, [
@@ -55,7 +55,7 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: survey
+  controller: survey1
 })
   .config(config);
  
@@ -64,211 +64,36 @@ function config($stateProvider, $urlRouterProvider) {
   
   $stateProvider
   
-      .state('survey', {
-        url: '/survey',
-        template: '<survey></survey>'
-      })
+    .state('survey1', {
+      url: '/survey1',
+      template: '<survey1></survey1>'
+    })
       
-      .state('survey.favRecords', {
+      .state('survey1.favRecords', {
           url: '/favRecords',
-          template: '<survey-fav-records></survey-fav-records>'
+          template: '<survey1-fav-records></survey1-fav-records>'
       })
       
-      .state('survey.favProducers', {
+      .state('survey1.favProducers', {
           url: '/favProducers',
-          template: '<survey-fav-producers></survey-fav-producers>'
+          template: '<survey1-fav-producers></survey1-fav-producers>'
       })
       
-      .state('survey.favLabels', {
+      .state('survey1.favLabels', {
           url: '/favLabels',
-          template: '<surve1y-fav-labels></survey-fav-labels>'
+          template: '<survey1-fav-labels></survey1-fav-labels>'
       })
       
-      .state('survey.skillLevel', {
+      .state('survey1.skillLevel', {
           url: '/skillLevel',
-          template: '<survey-skill-level></survey-skill-level>'
+          template: '<survey1-skill-level></survey1-skill-level>'
       })
       
-      .state('survey.instrumentYears', {
+      .state('survey1.instrumentYears', {
           url: '/instrumentYears',
-          template: '<survey-instrument-years></survey-instrument-years>'
-      })
-      
-      .state('survey2.liveBand', {
-          url: '/liveBand',
-          template: '<survey-live-band></survey-live-band>'
-      })
-      
-      .state('survey.gear', {
-          url: '/gear',
-          template: '<survey-gear></survey-gear>'
-      })
-      
-      .state('survey.priority', {
-          url: '/priority',
-          template: '<survey-priority></survey-priority>'
-      })
-      
-      .state('survey.production', {
-          url: '/production',
-          template: '<survey-production></survey-production>'
-      })
-      
-      .state('survey.money', {
-          url: '/money',
-          template: '<survey-money></survey-money>'
-      })
-      
-      .state('survey.practiceTime', {
-          url: '/practiceTime',
-          template: '<survey-practice-time></survey-practice-time>'
-      })
-      
-      .state('survey.localShows', {
-          url: '/localShows',
-          template: '<survey-local-shows></survey-local-shows>'
-      })
-      
-      .state('survey.touring', {
-          url: '/touring',
-          template: '<survey-touring></survey-touring>'
-      })
-      
-      .state('survey.recording', {
-          url: '/recording',
-          template: '<survey-recording></survey-recording>'
-      })
-      
-      .state('survey.songwriting', {
-          url: '/songwriting',
-          template: '<survey-songwriting></survey-songwriting>'
-      })
-      
-      .state('survey.originalOrCover', {
-          url: '/originalOrCover',
-          template: '<survey-original-or-cover></survey-original-or-cover>'
-      })
-      
-      .state('survey.occasionalCover', {
-          url: '/occasionalCover',
-          template: '<survey-occasional-cover></survey-occasional-cover>'
-      })
-      
-      .state('survey.venues', {
-          url: '/venues',
-          template: '<survey-venues></survey-venues>'
-      })
-      
-      .state('survey.venuesBad', {
-          url: '/venuesBad',
-          template: '<survey-venues-bad></survey-venues-bad>'
-      })
-      
-      .state('survey.practiceSpace', {
-          url: '/practiceSpace',
-          template: '<survey-practice-space></survey-practice-space>'
-      })
-      
-      .state('survey.vehicle', {
-          url: '/vehicle',
-          template: '<survey-vehicle></survey-vehicle>'
-      })
-      
-      .state('survey.van', {
-          url: '/van',
-          template: '<survey-van></survey-van>'
-      })
-      
-      .state('survey.sing', {
-          url: '/sing',
-          template: '<survey-sing></survey-sing>'
-      })
-      
-      .state('survey.harmonize', {
-          url: '/harmonize',
-          template: '<survey-harmonize></survey-harmonize>'
-      })
-      
-      .state('survey.merch', {
-          url: '/merch',
-          template: '<survey-merch></survey-merch>'
-      })
-      
-      .state('survey.familyOrBusiness', {
-          url: '/familyOrBusiness',
-          template: '<survey-family-or-business></survey-family-or-business>'
-      })
-      
-      .state('survey.bandImage', {
-          url: '/bandImage',
-          template: '<survey-band-image></survey-band-image>'
-      })
-      
-      .state('survey.favMovies', {
-          url: '/favMovies',
-          template: '<survey-fav-movies></survey-fav-movies>'
-      })
-      
-      .state('survey.favTvShows', {
-          url: '/favTvShows',
-          template: '<survey-fav-tv-shows></survey-fav-tv-shows>'
-      })
-      
-      .state('survey.socialPolitics', {
-          url: '/socialPolitics',
-          template: '<survey-social-politics></survey-social-politics>'
-      })
-      
-      .state('survey.fiscalPolitics', {
-          url: '/fiscalPolitics',
-          template: '<survey-fiscal-politics></survey-fiscal-politics>'
-      })
-      
-      .state('survey.politicsBand', {
-          url: '/politicsBand',
-          template: '<survey-politics-band></survey-politics-band>'
-      })
-      
-      .state('survey.religion', {
-          url: '/religion',
-          template: '<survey-religion></survey-religion>'
-      })
-      
-      .state('survey.religionBand', {
-          url: '/religionBand',
-          template: '<survey-religion-band></survey-religion-band>'
-      })
-      
-      .state('survey.drink', {
-          url: '/drink',
-          template: '<survey-drink></survey-drink>'
-      })
-      
-      .state('survey.drugs', {
-          url: '/drugs',
-          template: '<survey-drugs></survey-drugs>'
-      })
-      
-      .state('survey.personality', {
-          url: '/personality',
-          template: '<survey-personality></survey-personality>'
-      })
-      
-      .state('survey.gender', {
-          url: '/gender',
-          template: '<survey-gender></survey-gender>'
-      })
-      
-      .state('survey.race', {
-          url: '/race',
-          template: '<survey-race></survey-race>'
-      })
-      
-      .state('survey.sexuality', {
-          url: '/sexuality',
-          template: '<survey-sexuality></survey-sexuality>'
-      })
+          template: '<survey1-instrument-years></survey1-instrument-years>'
+      });
   
-  $urlRouterProvider.otherwise('/survey');
+  $urlRouterProvider.otherwise('/survey1');
   
 }

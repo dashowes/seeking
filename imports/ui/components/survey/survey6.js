@@ -3,11 +3,11 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey2.html';
+import template from './survey6.html';
 
 import { Profiles } from '../../../api/profiles/index';
 
-class survey2 {
+class survey6 {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
@@ -45,7 +45,7 @@ class survey2 {
   }
 }
  
-const name = 'survey2';
+const name = 'survey6';
  
 // create a module
 export default angular.module(name, [
@@ -55,7 +55,7 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: survey2
+  controller: survey6
 })
   .config(config);
  
@@ -64,36 +64,36 @@ function config($stateProvider, $urlRouterProvider) {
   
   $stateProvider
   
-    .state('survey2', {
-        url: '/survey2',
-        template: '<survey2></survey2>'
+    .state('survey6', {
+        url: '/survey6',
+        template: '<survey6></survey6>'
     })
       
-      .state('survey2.liveBand', {
-          url: '/liveBand',
-          template: '<survey2-live-band></survey2-live-band>'
+      .state('survey6.familyOrBusiness', {
+          url: '/familyOrBusiness',
+          template: '<survey6-family-or-business></survey6-family-or-business>'
       })
       
-      .state('survey2.gear', {
-          url: '/gear',
-          template: '<survey2-gear></survey2-gear>'
+      .state('survey6.bandImage', {
+          url: '/bandImage',
+          template: '<survey6-band-image></survey6-band-image>'
       })
       
-      .state('survey2.priority', {
-          url: '/priority',
-          template: '<survey2-priority></survey2-priority>'
+      .state('survey6.favMovies', {
+          url: '/favMovies',
+          template: '<survey6-fav-movies></survey6-fav-movies>'
       })
       
-      .state('survey2.production', {
-          url: '/production',
-          template: '<survey2-production></survey2-production>'
+      .state('survey6.favTvShows', {
+          url: '/favTvShows',
+          template: '<survey6-fav-tv-shows></survey6-fav-tv-shows>'
       })
       
-      .state('survey2.money', {
-          url: '/money',
-          template: '<survey2-money></survey2-money>'
+      .state('survey6.politics', {
+          url: '/politics',
+          template: '<survey6-politics></survey6-politics>'
       });
-  
-  $urlRouterProvider.otherwise('/survey2');
+      
+  $urlRouterProvider.otherwise('/survey6');
   
 }

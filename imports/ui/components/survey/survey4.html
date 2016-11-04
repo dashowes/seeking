@@ -1,0 +1,23 @@
+<div layout="column" layout-padding>
+ 
+  <div layout="column" layout-gt-sm="row">
+    <div flex="50">
+        
+        <div class="surveyheader">
+            <span class="md-headline">Survey</span>
+            <div id="status-buttons" class="text-center">
+                <a ui-sref-active="active" ui-sref=".originalOrCover"><span class="progress"></span></a>
+                <a ui-sref-active="active" ui-sref=".occasionalCover"><span class="progress"></span></a>
+                <a ui-sref-active="active" ui-sref=".venues"><span class="progress"></span></a>
+                <a ui-sref-active="active" ui-sref=".venuesBad"><span class="progress"></span></a>
+                <a ui-sref-active="active" ui-sref=".practiceSpace"><span class="progress"></span></a>
+            </div>
+        </div>
+            
+        <form id="survey-form" ng-submit="processForm()">
+            <div id="survey-views" ui-view></div>
+        </form>
+        
+    </div>
+  </div>
+</div>
