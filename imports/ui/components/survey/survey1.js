@@ -3,8 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey1.html';
+import { Meteor } from 'meteor/meteor';
 
+import template from './survey1.html';
 import { Profiles } from '../../../api/profiles/index';
 
 class survey1 {
@@ -16,6 +17,7 @@ class survey1 {
     this.profileId = $stateParams.profileId;
 
     this.subscribe('profiles');
+    this.subscribe('users');
     
     this.helpers({
       profile() {
@@ -42,6 +44,31 @@ class survey1 {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
+  }
+  
+  save() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        favRecordsAnswer: this.profile.favRecordsAnswer,
+        favRecordsWeight: this.profile.favRecordsWeight,
+        favProducersAnswer: this.profile.favProducersAnswer,
+        favProducersWeight: this.profile.favProducersWeight,
+        favLabelsAnswer: this.profile.favLabelsAnswer,
+        favLabelsWeight: this.profile.favLabelsWeight,
+        skillLevelAnswer: this.profile.skillLevelAnswer,
+        skillLevelWeight: this.profile.skillLevelWeight,
+        instrumentYearsAnswer: this.profile.instrumentYearsAnswer,
+        instrumentYearsWeight: this.profile.instrumentYearsWeight
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
   }
 }
  
@@ -94,6 +121,6 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey1-instrument-years></survey1-instrument-years>'
       });
   
-  $urlRouterProvider.otherwise('/survey1');
+  $urlRouterProvider.otherwise('/survey1/favRecords');
   
 }

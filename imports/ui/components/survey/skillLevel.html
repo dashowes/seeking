@@ -1,0 +1,15 @@
+<form flex layout="column">
+    <div flex="10" layout layout-align="center center">
+        <span class="sliderlabel small md-body-1">What is your skill level?</span>
+    </div>
+    <md-slider flex md-discrete ng-model="survey1.profile.skillLevelAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+  
+    <div flex="10" layout layout-align="center center">
+        <span class="sliderlabel small md-body-1">Importance</span>
+    </div>
+    <md-slider flex class="md-accent" md-discrete ng-model="survey1.profile.skillLevelWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+
+  <div layout="row">
+    <md-button ng-click="survey1.save()" ui-sref="survey1.instrumentYears" class="nextbutton md-raised">Next</md-button>
+  </div>
+</form>

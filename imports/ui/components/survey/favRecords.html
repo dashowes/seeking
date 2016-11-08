@@ -1,7 +1,15 @@
-<md-card>
-    <md-card-title>
-        <md-card-title-text>
-            
-        </md-card-title-text>
-    </md-card-title>
-</md-card>
+<form flex layout="column">
+  <md-input-container class="detailsinput">
+    <label>What are your favorite records?</label>
+    <input ng-model="survey1.profile.favRecordsAnswer" ng-disabled="!survey1.isLoggedIn">
+  </md-input-container>
+  
+    <div flex="10" layout layout-align="center center">
+        <span class="sliderlabel small md-body-1">Importance</span>
+    </div>
+    <md-slider flex class="md-accent" md-discrete ng-model="survey1.profile.favRecordsWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+
+  <div layout="row">
+    <md-button ng-click="survey1.save()" ui-sref="survey1.favProducers" class="nextbutton md-raised">Next</md-button>
+  </div>
+</form>
