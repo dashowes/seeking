@@ -3,8 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey3.html';
+import { Meteor } from 'meteor/meteor';
 
+import template from './survey3.html';
 import { Profiles } from '../../../api/profiles/index';
 
 class survey3 {
@@ -16,17 +17,13 @@ class survey3 {
     this.profileId = $stateParams.profileId;
 
     this.subscribe('profiles');
+    this.subscribe('users');
     
     this.helpers({
       profile() {
         return Profiles.findOne({
           _id: $stateParams.profileId
         });
-      },
-      question() {
-          return Profiles.questions.findOne({
-              _id: $stateParams.profileId.questionId
-          });
       },
       users() {
         return Meteor.users.find({});
@@ -42,6 +39,31 @@ class survey3 {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
+  }
+  
+  save() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        practiceTimeAnswer: this.profile.practiceTimeAnswer,
+        practiceTimeWeight: this.profile.practiceTimeWeight,
+        localShowsAnswer: this.profile.localShowsAnswer,
+        localShowsWeight: this.profile.localShowsWeight,
+        touringAnswer: this.profile.touringAnswer,
+        touringWeight: this.profile.touringWeight,
+        recordingAnswer: this.profile.recordingAnswer,
+        recordingWeight: this.profile.recordingWeight,
+        songwritingAnswer: this.profile.songwritingAnswer,
+        songWritingWeight: this.profile.songWritingWeight
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
   }
 }
  
@@ -94,6 +116,6 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey3-songwriting></survey3-songwriting>'
       });
       
-  $urlRouterProvider.otherwise('/survey3');
+  $urlRouterProvider.otherwise('/survey3/practiceTime');
   
 }

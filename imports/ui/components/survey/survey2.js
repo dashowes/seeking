@@ -3,8 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey2.html';
+import { Meteor } from 'meteor/meteor';
 
+import template from './survey2.html';
 import { Profiles } from '../../../api/profiles/index';
 
 class survey2 {
@@ -16,17 +17,13 @@ class survey2 {
     this.profileId = $stateParams.profileId;
 
     this.subscribe('profiles');
+    this.subscribe('users');
     
     this.helpers({
       profile() {
         return Profiles.findOne({
           _id: $stateParams.profileId
         });
-      },
-      question() {
-          return Profiles.questions.findOne({
-              _id: $stateParams.profileId.questionId
-          });
       },
       users() {
         return Meteor.users.find({});
@@ -42,6 +39,31 @@ class survey2 {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
+  }
+  
+  save() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        liveBandAnswer: this.profile.liveBandAnswer,
+        liveBandWeight: this.profile.liveBandWeight,
+        gearAnswer: this.profile.gearAnswer,
+        gearWeight: this.profile.gearWeight,
+        priorityAnswer: this.profile.priorityAnswer,
+        priorityWeight: this.profile.priorityWeight,
+        productionAnswer: this.profile.productionAnswer,
+        productionWeight: this.profile.productionWeight,
+        skillAnswer: this.profile.skillAnswer,
+        skillWeight: this.profile.skillWeight
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
   }
 }
  
@@ -94,6 +116,6 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey2-money></survey2-money>'
       });
   
-  $urlRouterProvider.otherwise('/survey2');
+  $urlRouterProvider.otherwise('/survey2/liveBand');
   
 }

@@ -1,0 +1,27 @@
+<form flex layout="column">
+    <span class="md-subhead">How much touring are you able/willing to do?</span>
+    <div layout>
+        <div flex="10" layout layout-align="center center">
+            <span class="sliderlabel small md-body-1">None</span>
+        </div>
+        <md-slider flex md-discrete ng-model="survey3.profile.touringAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+        <div flex="10" layout layout-align="center center">
+            <span class="sliderlabel small md-body-1">A lot</span>
+        </div>
+    </div>
+    
+    <span class="md-subhead">How important is this to you?</span>
+    <div layout>
+        <div flex="10" layout layout-align="center center">
+            <span class="sliderlabel small md-body-1">Not at all</span>
+        </div>
+        <md-slider flex class="md-accent" md-discrete ng-model="survey3.profile.touringWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+        <div flex="10" layout layout-align="center center">
+            <span class="sliderlabel small md-body-1">Very</span>
+        </div>
+    </div>
+
+  <div layout="row">
+    <md-button ng-click="survey3.save()" ui-sref="survey3.recording" class="nextbutton md-raised">Next</md-button>
+  </div>
+</form>

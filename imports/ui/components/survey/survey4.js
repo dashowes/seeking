@@ -3,8 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey4.html';
+import { Meteor } from 'meteor/meteor';
 
+import template from './survey4.html';
 import { Profiles } from '../../../api/profiles/index';
 
 class survey4 {
@@ -16,6 +17,7 @@ class survey4 {
     this.profileId = $stateParams.profileId;
 
     this.subscribe('profiles');
+    this.subscribe('users');
     
     this.helpers({
       profile() {
@@ -94,6 +96,6 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey4-practice-space></survey4-practice-space>'
       });
       
-  $urlRouterProvider.otherwise('/survey4');
+  $urlRouterProvider.otherwise('/survey4/originalOrCover');
   
 }

@@ -25,11 +25,6 @@ class survey1 {
           _id: $stateParams.profileId
         });
       },
-      question() {
-          return Profiles.questions.findOne({
-              _id: $stateParams.profileId.questionId
-          });
-      },
       users() {
         return Meteor.users.find({});
       },
