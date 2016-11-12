@@ -3,8 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey8.html';
+import { Meteor } from 'meteor/meteor';
 
+import template from './survey8.html';
 import { Profiles } from '../../../api/profiles/index';
 
 class survey8 {
@@ -16,17 +17,13 @@ class survey8 {
     this.profileId = $stateParams.profileId;
 
     this.subscribe('profiles');
+    this.subscribe('users');
     
     this.helpers({
       profile() {
         return Profiles.findOne({
           _id: $stateParams.profileId
         });
-      },
-      question() {
-          return Profiles.questions.findOne({
-              _id: $stateParams.profileId.questionId
-          });
       },
       users() {
         return Meteor.users.find({});
@@ -42,6 +39,29 @@ class survey8 {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
+  }
+  
+  save() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        personalityAnswer: this.profile.personalityAnswer,
+        personalityWeight: this.profile.personalityWeight,
+        genderAnswer: this.profile.genderAnswer,
+        genderWeight: this.profile.genderWeight,
+        raceAnswer: this.profile.raceAnswer,
+        raceWeight: this.profile.raceWeight,
+        sexualityAnswer: this.profile.sexualityAnswer,
+        sexualityWeight: this.profile.sexualityWeight,
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
   }
 }
  
@@ -94,6 +114,6 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey8-finished></survey8-finished>'
       });
   
-  $urlRouterProvider.otherwise('/survey8');
+  $urlRouterProvider.otherwise('/survey8/personality');
   
 }
