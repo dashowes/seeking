@@ -25,11 +25,6 @@ class survey4 {
           _id: $stateParams.profileId
         });
       },
-      question() {
-          return Profiles.questions.findOne({
-              _id: $stateParams.profileId.questionId
-          });
-      },
       users() {
         return Meteor.users.find({});
       },
@@ -44,6 +39,31 @@ class survey4 {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
+  }
+  
+  save() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        originalOrCoverAnswer: this.profile.originalOrCoverAnswer,
+        originalOrCoverWeight: this.profile.originalOrCoverWeight,
+        occasionalCoverAnswer: this.profile.occasionalCoverAnswer,
+        occasionalCoverWeight: this.profile.occasionalCoverWeight,
+        venuesAnswer: this.profile.venuesAnswer,
+        venuesWeight: this.profile.venuesWeight,
+        venuesBadAnswer: this.profile.venuesBadAnswer,
+        venuesBadWeight: this.profile.venuesBadWeight,
+        practiceSpaceAnswer: this.profile.practiceSpaceAnswer,
+        practiceSpaceWeight: this.profile.practiceSpaceWeight
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
   }
 }
  

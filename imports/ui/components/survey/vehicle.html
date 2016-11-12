@@ -1,0 +1,24 @@
+<form flex layout="column">
+    <span class="md-subhead">Do you have a vehicle?</span>
+    <md-radio-group ng-model="survey5.profile.vehicleAnswer">
+        <div layout="column">
+            <md-radio-button value="1">Yes</md-radio-button>
+            <md-radio-button value="0">No</md-radio-button>
+        </div>
+    </md-radio-group>
+    
+    <span class="md-subhead">How important is this to you?</span>
+    <div layout>
+        <div flex="10" layout layout-align="center center">
+            <span class="sliderlabel small md-body-1">Not at all</span>
+        </div>
+        <md-slider flex class="md-accent" md-discrete ng-model="survey5.profile.vehicleWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+        <div flex="10" layout layout-align="center center">
+            <span class="sliderlabel small md-body-1">Very</span>
+        </div>
+    </div>
+
+  <div layout="row">
+    <md-button ng-click="survey5.save()" ui-sref="survey5.van" class="nextbutton md-raised">Next</md-button>
+  </div>
+</form>

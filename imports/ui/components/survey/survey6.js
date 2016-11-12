@@ -3,8 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey6.html';
+import { Meteor } from 'meteor/meteor';
 
+import template from './survey6.html';
 import { Profiles } from '../../../api/profiles/index';
 
 class survey6 {
@@ -16,17 +17,13 @@ class survey6 {
     this.profileId = $stateParams.profileId;
 
     this.subscribe('profiles');
+    this.subscribe('users');
     
     this.helpers({
       profile() {
         return Profiles.findOne({
           _id: $stateParams.profileId
         });
-      },
-      question() {
-          return Profiles.questions.findOne({
-              _id: $stateParams.profileId.questionId
-          });
       },
       users() {
         return Meteor.users.find({});
@@ -42,6 +39,31 @@ class survey6 {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
+  }
+  
+  save() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        familyOrBusinessAnswer: this.profile.familyOrBusinessAnswer,
+        familyOrBusinessWeight: this.profile.familyOrBusinessWeight,
+        bandImageAnswer: this.profile.bandImageAnswer,
+        bandImageWeight: this.profile.bandImageWeight,
+        favMoviesAnswer: this.profile.favMoviesAnswer,
+        favMoviesWeight: this.profile.favMoviesWeight,
+        favTvShowsAnswer: this.profile.favTvShowsAnswer,
+        favTvShowsWeight: this.profile.favTvShowsWeight,
+        politicsAnswer: this.profile.politicsAnswer,
+        politicsWeight: this.profile.politicsWeight
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
   }
 }
  
@@ -94,6 +116,6 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey6-politics></survey6-politics>'
       });
       
-  $urlRouterProvider.otherwise('/survey6');
+  $urlRouterProvider.otherwise('/survey6/familyOrBusiness');
   
 }

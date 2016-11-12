@@ -3,8 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import template from './survey5.html';
+import { Meteor } from 'meteor/meteor';
 
+import template from './survey5.html';
 import { Profiles } from '../../../api/profiles/index';
 
 class survey5 {
@@ -16,17 +17,13 @@ class survey5 {
     this.profileId = $stateParams.profileId;
 
     this.subscribe('profiles');
+    this.subscribe('users');
     
     this.helpers({
       profile() {
         return Profiles.findOne({
           _id: $stateParams.profileId
         });
-      },
-      question() {
-          return Profiles.questions.findOne({
-              _id: $stateParams.profileId.questionId
-          });
       },
       users() {
         return Meteor.users.find({});
@@ -42,6 +39,31 @@ class survey5 {
   
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
+  }
+  
+  save() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        vehicleAnswer: this.profile.vehicleAnswer,
+        vehicleWeight: this.profile.vehicleWeight,
+        vanAnswer: this.profile.vanAnswer,
+        vanWeight: this.profile.vanWeight,
+        singAnswer: this.profile.singAnswer,
+        singWeight: this.profile.singWeight,
+        harmonizeAnswer: this.profile.harmonizeAnswer,
+        harmonizeWeight: this.profile.harmonizeWeight,
+        merchAnswer: this.profile.merchAnswer,
+        merchWeight: this.profile.merchWeight
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
   }
 }
  
@@ -94,6 +116,6 @@ function config($stateProvider, $urlRouterProvider) {
           template: '<survey5-merch></survey5-merch>'
       });
   
-  $urlRouterProvider.otherwise('/survey5');
+  $urlRouterProvider.otherwise('/survey5/vehicle');
   
 }
