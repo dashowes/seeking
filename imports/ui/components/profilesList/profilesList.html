@@ -6,23 +6,25 @@
     <h2 ui-sref="login" id="loginprompt">Log in to create a profile!</h2>
   </div>
  
-  <div layout="column" layout-gt-sm="row">
-    <div flex="50">
+  <div flex-xs flex-gt-xs="50" layout="column">
       <md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">
+        <img ng-src="{{profile.mainPic}}" class="md-card-image" alt="{{profile.firstName}}">
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
-              {{profile.firstName}} {{profile.lastName}}
+              {{profile.firstName}}
             </span>
-            <span class="md-subhead">{{profile.zip}}</span>
-            <span class="md-subhead">{{profile.bio}}</span>
-            <span class="md-subhead">Favorite Bands: {{profile.favBands}}</span>
+            <span class="md-subhead">{{profile.instrument1}}, {{profile.instrument2}}</span>
           </md-card-title-text>
+          <md-card-actions layout="row" layout-align="center">
+            <md-button>{{profilesList.distance}}</md-button>
+            <md-button>{{profilesList.pctMatch}}% Match</md-button>
+            <md-button>{{profilesList.joinDate}}</md-button>
+          </md-card-actions>
         </md-card-title>
-        <take-survey-button></take-survey-button>
-        <!--<profile-remove profile="profile"></profile-remove>-->
+        <take-survey-button ng-hide="profilesList.isOwner(profile)"></take-survey-button>
+        <profile-remove ng-hide="profilesList.isOwner(profile)" profile="profile"></profile-remove>
       </md-card>
-    </div>
   </div>
   
   <div class="smedia-icon-container">
