@@ -17,6 +17,11 @@
       </md-input-container>
       
       <md-input-container class="detailsinput">
+        <label>Age</label>
+        <input ng-model="profileDetails.profile.age" ng-disabled="!profileDetails.isLoggedIn">
+      </md-input-container>
+      
+      <md-input-container class="detailsinput">
         <label>Bio</label>
         <input ng-model="profileDetails.profile.bio" ng-disabled="!profileDetails.isLoggedIn">
       </md-input-container>

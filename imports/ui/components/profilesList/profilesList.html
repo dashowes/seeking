@@ -11,7 +11,7 @@
         <img ng-src="{{profile.mainPic}}" class="md-card-image" alt="{{profile.firstName}}">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
+            <span class="md-headline" ui-sref="profileFullView({ profileId: profile._id })">
               {{profile.firstName}}
             </span>
             <span class="md-subhead">{{profile.instrument1}}, {{profile.instrument2}}</span>
@@ -25,9 +25,15 @@
         <take-survey-button ng-hide="profilesList.isOwner(profile)"></take-survey-button>
         <profile-remove ng-hide="profilesList.isOwner(profile)" profile="profile"></profile-remove>
       </md-card>
+      
+      <div layout="row" layout-align="center center">
+        <md-button class="md-fab" aria-label="The Horns">
+          <md-icon>PATH TO HORNS</md-icon>
+        </md-button>
+      </div>
   </div>
   
-  <div class="smedia-icon-container">
+  <div class="smedia-icon-container" ng-hide="profilesList.isLoggedIn">
     <a href="http://facebook.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/fbblack.png"></a>
     <a href="http://twitter.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/twblack.png"></a>
   </div>

@@ -42,6 +42,7 @@ class ProfileDetails {
         firstName: this.profile.firstName,
         lastName: this.profile.lastName,
         zip: this.profile.zip,
+        age: this.profile.age,
         bio: this.profile.bio,
         favGenres: this.profile.favGenres,
         favBands: this.profile.favBands
