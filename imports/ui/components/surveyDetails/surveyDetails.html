@@ -1,0 +1,407 @@
+<div layout="column" layout-padding>
+    <div flex-xs flex-gt-xs="50" layout="column">
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">What are your favorite records?</span>
+                <md-input-container class="detailsinput">
+                    <input ng-model="survey1.profile.favRecordsAnswer" ng-disabled="!profileDetails.isOwner(profile)">
+                </md-input-container>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" ng-disabled="!profileDetails.isOwner(profile)" md-discrete ng-model="survey1.profile.favRecordsWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">Who are your favorite producers?</span>
+                <md-input-container class="detailsinput">
+                    <input ng-model="survey1.profile.favProducersAnswer" ng-disabled="!profileDetails.isOwner(profile)">
+                </md-input-container>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" ng-disabled="!profileDetails.isOwner(profile)" md-discrete ng-model="survey1.profile.favProducersWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">What are your favorite record labels?</span>
+                <md-input-container class="detailsinput">
+                    <input ng-model="survey1.profile.favLabelsAnswer" ng-disabled="!profileDetails.isOwner(profile)">
+                </md-input-container>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" ng-disabled="!profileDetails.isOwner(profile)" md-discrete ng-model="survey1.profile.favLabelsWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">What is your skill level?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Beginner</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey1.profile.skillLevelAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Expert</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey1.profile.skillLevelWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How many years have you been playing your instrument?</span>
+                <md-slider-container>
+                    <md-slider flex min="0" max="75" ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey1.profile.instrumentYearsAnswer" aria-label="years playing instrument" id="instrumentyears-slider">
+                </md-slider>
+                <md-input-container>
+                    <input flex type="number" ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey1.profile.instrumentYearsAnswer" aria-label="years playing instrument" aria-controls="instrumentyears-slider">
+                </md-input-container>
+                </md-slider-container>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey1.profile.instrumentYearsWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How much live band experience do you have?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Beginner</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.liveBandAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Expert</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.liveBandWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How much gear do you have?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">None</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.gearAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Ready to gig</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.gearWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How much of a priority do you want a band to be in your life?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Casual</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.priorityAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Sole focus</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.priorityWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">What production style do you prefer?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Lo-fi</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.productionAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Big budget studio</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.productionWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How much money are you willing to spend on your ideal band?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">None</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.moneyAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">As much as it takes</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey2.profile.moneyWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How often do you want to practice?</span>
+                <md-radio-group ng-model="survey3.profile.practiceTimeAnswer" ng-disabled="!profileDetails.isOwner(profile)">
+                    <div layout="row">
+                        <div layout="column">
+                            <md-radio-button value="0">Less than 1 day/week</md-radio-button>
+                            <md-radio-button value="2">2 days/week</md-radio-button>
+                        </div>
+                        <div layout="column">
+                            <md-radio-button value="1">1 day/week</md-radio-button>
+                            <md-radio-button value="3">3+ days/week</md-radio-button>
+                        </div>
+                    </div>
+                </md-radio-group>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.practiceTimeWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How often do you want to play local shows?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Seldom</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.localShowsAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Very often</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.localShowsWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How much touring are you able/willing to do?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">None</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.touringAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">A lot</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.touringWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How often do you want to record?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Never</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.recordingAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">A lot</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.recordingWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div flex layout="row">
+            <div layout="column" flex="25">
+                <span class="surveyanswermatchpct md-subhead">% MATCH</span>
+            </div>
+            <div layout="column" flex="75">
+                <span class="md-subhead">How involved do you want to be in songwriting?</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Not at all</span>
+                    </div>
+                    <md-slider flex md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.songwritingAnswer" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Main songwriter</span>
+                    </div>
+                </div>
+                <span class="md-subhead">Priority</span>
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">Low</span>
+                    </div>
+                    <md-slider flex class="md-accent" md-discrete ng-disabled="!profileDetails.isOwner(profile)" ng-model="survey3.profile.songwritingWeight" step="1" min="1" max="5" aria-label="importance"></md-slider>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="sliderlabel small md-body-1">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

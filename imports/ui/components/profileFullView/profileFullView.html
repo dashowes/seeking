@@ -26,5 +26,9 @@
                 <md-content>{{profile.favGenres}}</md-content>
             </div>
         </md-card>
+        <md-card-actions layout="row" layout-align="center">
+            <md-button class="md-raised" ng-show="profilesList.isOwner(profile)" ui-sref="surveyDetails">Edit Survey Answers</md-button>
+            <md-button class="md-raised" ng-show="!profilesList.isOwner(profile)" ui-sref="surveyDetails">View Survey Answers</md-button>
+        </md-card-actions>
     </div>
 </div>

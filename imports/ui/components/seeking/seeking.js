@@ -23,6 +23,7 @@ import { name as Survey5 } from '../survey/survey5';
 import { name as Survey6 } from '../survey/survey6';
 import { name as Survey7 } from '../survey/survey7';
 import { name as Survey8 } from '../survey/survey8';
+import { name as SurveyDetails } from '../surveyDetails/surveyDetails';
 
  
 class Seeking {}
