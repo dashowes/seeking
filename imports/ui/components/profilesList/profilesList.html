@@ -18,7 +18,7 @@
           </md-card-title-text>
           <md-card-actions layout="row" layout-align="center">
             <md-button>{{profilesList.distance}}</md-button>
-            <md-button>{{profilesList.pctMatch}}% Match</md-button>
+            <md-button class="pctmatch">{{profilesList.pctMatch}}% Match</md-button>
             <md-button>{{profilesList.joinDate}}</md-button>
           </md-card-actions>
         </md-card-title>
@@ -27,7 +27,7 @@
       </md-card>
       
       <div layout="row" layout-align="center center">
-        <md-button class="md-fab" aria-label="The Horns">
+        <md-button ng-click="profilesList.like()" class="md-fab" aria-label="The Horns">
           <md-icon>PATH TO HORNS</md-icon>
         </md-button>
       </div>

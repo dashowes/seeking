@@ -24,6 +24,7 @@ import { name as Survey6 } from '../survey/survey6';
 import { name as Survey7 } from '../survey/survey7';
 import { name as Survey8 } from '../survey/survey8';
 import { name as SurveyDetails } from '../surveyDetails/surveyDetails';
+import { name as Messenger } from '../Messenger/Messenger';
 
  
 class Seeking {}
@@ -53,6 +54,8 @@ export default angular.module(name, [
   Survey6,
   Survey7,
   Survey8,
+  SurveyDetails,
+  Messenger,
   'accounts.ui'
 ]).component(name, {
   template,
