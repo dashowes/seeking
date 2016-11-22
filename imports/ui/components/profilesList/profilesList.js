@@ -2,6 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
+import moment from 'moment';
 
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
