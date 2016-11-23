@@ -63,6 +63,38 @@ class ProfilesList {
   sortChanged(sort) {
     this.sort = sort;
   }
+  
+  match() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        matched: this.profile.matched
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
+  }
+  
+  unMatch() {
+    Profiles.update({
+      _id: this.profile._id
+    }, {
+      $set: {
+        matched: !this.profile.matched
+      }
+    }, (error) => {
+      if (error) {
+        console.log('WHOOPS');
+      } else {
+        console.log('Done!');
+      }
+    });
+  }
 }
  
 const name = 'profilesList';

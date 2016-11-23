@@ -2,13 +2,15 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
+import moment from 'moment';
 
 import { Meteor } from 'meteor/meteor';
 
-import template from './matchList.html';
+import template from './messenger.html';
 import { Profiles } from '../../../api/profiles/index';
-import { Matches } from '../../../api/matches/index';
+import { Chats } from '../../../api/chats/index';
 import { Messages } from '../../../api/messages/index';
+import { name as ProfilesList } from '../profilesList/profilesList';
 
 class messenger {
   constructor($stateParams, $scope, $reactive) {
@@ -17,6 +19,7 @@ class messenger {
     $reactive(this).attach($scope);
     
     this.profileId = $stateParams.profileId;
+    this.chatId = this.$stateParams.chatId;
 
     this.subscribe('profiles');
     this.subscribe('users');
@@ -35,6 +38,9 @@ class messenger {
       },
       isLoggedIn() {
         return !!Meteor.userId();
+      },
+      data() {
+        return Chats.findOne(this.chatId);
       }
     });
   }
@@ -42,29 +48,15 @@ class messenger {
   isOwner(profile) {
     return this.isLoggedIn && profile.owner === this.currentUserId;
   }
-  
-  save() {
-    Profiles.update({
-      _id: this.profile._id
-    }, {
-      $set: {
-        favRecordsAnswer: this.profile.favRecordsAnswer,
-        favRecordsWeight: this.profile.favRecordsWeight,
-        favProducersAnswer: this.profile.favProducersAnswer,
-        favProducersWeight: this.profile.favProducersWeight,
-        favLabelsAnswer: this.profile.favLabelsAnswer,
-        favLabelsWeight: this.profile.favLabelsWeight,
-        skillLevelAnswer: this.profile.skillLevelAnswer,
-        skillLevelWeight: this.profile.skillLevelWeight,
-        instrumentYearsAnswer: this.profile.instrumentYearsAnswer,
-        instrumentYearsWeight: this.profile.instrumentYearsWeight
-      }
-    }, (error) => {
-      if (error) {
-        console.log('WHOOPS');
-      } else {
-        console.log('Done!');
-      }
+
+  filter(time) {
+    if(!time) return;
+    
+    return moment(time).calendar(null, {
+      lastDay : '[Yesterday]',
+      sameDay : 'LT',
+      lastWeek : 'dddd',
+      sameElse : 'DD/MM/YY'
     });
   }
 }
@@ -75,7 +67,9 @@ const name = 'messenger';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  utilsPagination
+  utilsPagination,
+  moment,
+  ProfilesList
 ]).component(name, {
   template,
   controllerAs: name,
