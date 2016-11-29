@@ -24,6 +24,15 @@ if (Meteor.isServer) {
             $exists: true
           }
         }]
+      }, {
+        // when logged in user is one of matched
+        $and: [{
+          matched: this.userId
+        }, {
+          matched: {
+            $exists: true
+          }
+        }]
       }]
     };
     

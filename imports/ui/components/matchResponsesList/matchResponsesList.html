@@ -1,0 +1,10 @@
+Yes -
+{{ (matchResponsesList.responses | filter:{response:'yes'}).length }}
+Maybe -
+{{ (matchResponsesList.responses | filter:{response:'maybe'}).length }}
+No -
+{{ (matchResponsesList.responses | filter:{response:'no'}).length }}
+
+<match-response-users responses="matchResponsesList.responses" type="yes"></match-response-users>
+<match-response-users responses="matchResponsesList.responses" type="maybe"></match-response-users>
+<match-response-users responses="matchResponsesList.responses" type="no"></match-response-users>

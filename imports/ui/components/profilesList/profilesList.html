@@ -17,16 +17,16 @@
             <span class="md-subhead">{{profile.instrument1}}, {{profile.instrument2}}</span>
           </md-card-title-text>
           <md-card-actions layout="row" layout-align="center">
-            <md-button>{{profilesList.distance}}</md-button>
+            <md-button>{{profilesList.city}}, {{profilesList.state}}</md-button>
             <md-button class="pctmatch">{{profilesList.pctMatch}}% Match</md-button>
             <md-button>{{profilesList.joinDate}}</md-button>
           </md-card-actions>
         </md-card-title>
         <div layout="row" layout-align="center center">
-          <md-button ng-click="profilesList.match()" class="md-fab" aria-label="Match">
-            <md-icon>PATH TO HORNS</md-icon>
-          </md-button>
+          <match-response profile="profile"></match-response>
         </div>
+        <match-responses-list responses="profile.responses"></match-responses-list>
+        <match-unanswered profile="profile"></match-unanswered>
         <take-survey-button ng-hide="!profilesList.isOwner(profile)"></take-survey-button>
         <profile-remove ng-hide="!profilesList.isOwner(profile)" profile="profile"></profile-remove>
       </md-card>

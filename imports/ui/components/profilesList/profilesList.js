@@ -11,6 +11,9 @@ import { name as ProfilesSort } from '../profilesSort/profilesSort';
 import { name as ProfileAddButton } from '../profileAddButton/profileAddButton';
 import { name as ProfileAdd } from '../profileAdd/profileAdd';
 import { name as ProfileRemove } from '../profileRemove/profileRemove';
+import { name as MatchResponse } from '../matchResponse/matchResponse';
+import { name as MatchResponsesList } from '../matchResponsesList/matchResponsesList';
+import { name as MatchUnanswered } from '../matchUnanswered/matchUnanswered';
 import { name as TakeSurveyButton } from '../takeSurveyButton/takeSurveyButton';
  
 class ProfilesList {
@@ -32,6 +35,8 @@ class ProfilesList {
        sort: this.getReactively('sort')
     }, this.getReactively('searchText')
     ]);
+    
+    this.subscribe('users');
  
     this.helpers({
       profiles() {
@@ -63,37 +68,6 @@ class ProfilesList {
     this.sort = sort;
   }
   
-  match() {
-    Profiles.update({
-      _id: this.profile._id
-    }, {
-      $set: {
-        matched: this.profile.matched
-      }
-    }, (error) => {
-      if (error) {
-        console.log('WHOOPS');
-      } else {
-        console.log('Done!');
-      }
-    });
-  }
-  
-  unMatch() {
-    Profiles.update({
-      _id: this.profile._id
-    }, {
-      $set: {
-        matched: !this.profile.matched
-      }
-    }, (error) => {
-      if (error) {
-        console.log('WHOOPS');
-      } else {
-        console.log('Done!');
-      }
-    });
-  }
 }
  
 const name = 'profilesList';
@@ -107,6 +81,9 @@ export default angular.module(name, [
   ProfileAdd,
   ProfileAddButton,
   ProfileRemove,
+  MatchResponse,
+  MatchResponsesList,
+  MatchUnanswered,
   TakeSurveyButton
 ]).component(name, {
   template,

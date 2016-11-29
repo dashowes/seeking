@@ -1,0 +1,5 @@
+<div ng-repeat="response in matchResponseUsers.responses | filter:{ response: matchResponseUsers.type }">
+  {{ matchResponseUsers.getUserById(response.user) | displayNameFilter }}
+  -
+  {{ matchResponseUsers.type }}
+</div>

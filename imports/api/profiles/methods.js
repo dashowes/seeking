@@ -64,6 +64,83 @@ export function match(profileId, userId) {
   }
 }
 
+export function response(profileId, response) {
+  check(profileId, String);
+  check(response, String);
+ 
+  if (!this.userId) {
+    throw new Meteor.Error(403, 'You must be logged in to respond');
+  }
+ 
+  if (!_.contains(['yes', 'no', 'maybe'], response)) {
+    throw new Meteor.Error(400, 'Invalid response');
+  }
+ 
+  const profile = Profiles.findOne({
+    _id: profileId,
+    $or: [{
+      // is public
+      $and: [{
+        public: true
+      }, {
+        public: {
+          $exists: true
+        }
+      }]
+    },{
+      // is owner
+      $and: [{
+        owner: this.userId
+      }, {
+        owner: {
+          $exists: true
+        }
+      }]
+    }, {
+      // is matched
+      $and: [{
+        matched: this.userId
+      }, {
+        invited: {
+          $exists: true
+        }
+      }]
+    }]
+  });
+ 
+  if (!profile) {
+    throw new Meteor.Error(404, 'No such profile');
+  }
+ 
+  const hasUserResponse = _.findWhere(profile.responses, {
+    user: this.userId
+  });
+  
+  if (!hasUserResponse) {
+    // add new response entry
+    Profiles.update(profileId, {
+      $push: {
+        responses: {
+          response,
+          user: this.userId
+        }
+      }
+    });
+  } else {
+    // update response entry
+    const userId = this.userId;
+    Profiles.update({
+      _id: profileId,
+      'responses.user': userId
+    }, {
+      $set: {
+        'responses.$.response': response
+      }
+    });
+  }
+}
+
 Meteor.methods({
-  match
+  match,
+  response
 });
