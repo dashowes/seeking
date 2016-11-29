@@ -5,6 +5,15 @@
     <h3>or</h3>
     <h2 ui-sref="login" id="loginprompt">Log in to create a profile!</h2>
   </div>
+  
+  <div flex layout="row" layout-padding>
+    <md-input-container>
+      <label>Search</label>
+      <input ng-model="profilesList.searchText">
+    </md-input-container>
+ 
+    <profiles-sort on-change="profilesList.sortChanged(sort)" property="name" order="1"></profiles-sort>
+  </div>
  
   <div flex-xs flex-gt-xs="50" layout="column">
       <md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">
@@ -16,19 +25,23 @@
             </span>
             <span class="md-subhead">{{profile.instrument1}}, {{profile.instrument2}}</span>
           </md-card-title-text>
-          <md-card-actions layout="row" layout-align="center">
-            <md-button>{{profilesList.city}}, {{profilesList.state}}</md-button>
-            <md-button class="pctmatch">{{profilesList.pctMatch}}% Match</md-button>
-            <md-button>{{profilesList.joinDate}}</md-button>
-          </md-card-actions>
+          <md-card-content layout="row" layout-align="center">
+            <span class="md-subhead">{{profilesList.city}}, {{profilesList.state}}</span>
+            <span class="md-subhead pctmatch">{{profilesList.pctMatch}}% Match<span>
+            <span class="md-subhead">{{profilesList.joinDate}}</span>
+          </md-card-content>
         </md-card-title>
-        <div layout="row" layout-align="center center">
-          <match-response profile="profile"></match-response>
-        </div>
-        <match-responses-list responses="profile.responses"></match-responses-list>
-        <match-unanswered profile="profile"></match-unanswered>
-        <take-survey-button ng-hide="!profilesList.isOwner(profile)"></take-survey-button>
-        <profile-remove ng-hide="!profilesList.isOwner(profile)" profile="profile"></profile-remove>
+        
+        <md-card-actions>
+          <div layout="row" layout-align="center center">
+            <match-response profile="profile" ng-show="profilesList.isLoggedIn"></match-response>
+          </div>
+          <take-survey-button ng-hide="!profilesList.isOwner(profile)"></take-survey-button>
+          <profile-remove ng-show="profilesList.isOwner(profile)" profile="profile"></profile-remove>
+        </md-card-actions>
+        
+        <dir-pagination-controls on-page-change="profilesList.pageChanged(newPageNumber)"></dir-pagination-controls>
+        <profiles-map profiles="profilesList.profiles"></profiles-map>
       </md-card>
   </div>
   

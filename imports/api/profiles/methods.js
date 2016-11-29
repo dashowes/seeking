@@ -33,10 +33,6 @@ export function match(profileId, userId) {
     throw new Meteor.Error(404, 'No permissions!');
   }
  
-  if (profile.public) {
-    throw new Meteor.Error(400, 'That profile is public. No need to invite people.');
-  }
- 
   if (userId !== profile.owner && ! _.contains(profile.matched, userId)) {
     Profiles.update(profileId, {
       $addToSet: {

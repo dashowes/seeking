@@ -1,5 +1,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
+import uiRouter from 'angular-ui-router';
  
 import { Meteor } from 'meteor/meteor';
  
@@ -39,6 +40,7 @@ const name = 'profileUnmatched';
 // create a module
 export default angular.module(name, [
   angularMeteor,
+  uiRouter,
   UnmatchedFilter,
   DisplayNameFilter
 ]).component(name, {

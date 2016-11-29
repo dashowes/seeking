@@ -1,7 +1,12 @@
-<ul>
-  New People:
-  <li ng-repeat="profile in profileUnmatched.profiles | unmatchedFilter:profileUmnatched.profile">
-    <div>{{ user | displayNameFilter }}</div>
-    <button ng-click="profileUnmatched.match(user)">Match</button>
-  </li>
-</ul>
+<span class="md-headline">
+  New people:
+</span>
+ 
+<md-list>
+  <md-list-item ng-repeat="user in profileUnmatched.users | unmatchedFilter:profileUnmatched.profile" ui-sref="profileFullView({ profileId: profile._id })">
+    <p>{{ user | displayNameFilter }}</p>
+  </md-list-item>
+  <md-list-item ng-if="(profileUnmatched.users | unmatchedFilter:profileUnmatched.profile).length <= 0">
+    There's no one new around you.
+  </md-list-item>
+</md-list>

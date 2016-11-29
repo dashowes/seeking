@@ -8,12 +8,12 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import template from './profilesList.html';
 import { Profiles } from '../../../api/profiles/index';
 import { name as ProfilesSort } from '../profilesSort/profilesSort';
+import { name as ProfilesMap } from '../profilesMap/profilesMap';
 import { name as ProfileAddButton } from '../profileAddButton/profileAddButton';
 import { name as ProfileAdd } from '../profileAdd/profileAdd';
 import { name as ProfileRemove } from '../profileRemove/profileRemove';
 import { name as MatchResponse } from '../matchResponse/matchResponse';
 import { name as MatchResponsesList } from '../matchResponsesList/matchResponsesList';
-import { name as MatchUnanswered } from '../matchUnanswered/matchUnanswered';
 import { name as TakeSurveyButton } from '../takeSurveyButton/takeSurveyButton';
  
 class ProfilesList {
@@ -78,12 +78,12 @@ export default angular.module(name, [
   uiRouter,
   utilsPagination,
   ProfilesSort,
+  ProfilesMap,
   ProfileAdd,
   ProfileAddButton,
   ProfileRemove,
   MatchResponse,
   MatchResponsesList,
-  MatchUnanswered,
   TakeSurveyButton
 ]).component(name, {
   template,

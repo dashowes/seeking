@@ -3,45 +3,47 @@
     <form flex layout="column">
       <md-input-container class="detailsinput">
         <label>First Name</label>
-        <input ng-model="profileDetails.profile.firstName" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.firstName" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
  
       <md-input-container class="detailsinput">
         <label>Last Name</label>
-        <input ng-model="profileDetails.profile.lastName" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.lastName" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
       
       <md-input-container class="detailsinput">
         <label>City</label>
-        <input ng-model="profileDetails.profile.city" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.city" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
       
       <md-input-container class="detailsinput">
         <label>State</label>
-        <input ng-model="profileDetails.profile.state" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.state" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
       
       <md-input-container class="detailsinput">
         <label>Age</label>
-        <input ng-model="profileDetails.profile.age" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.age" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
       
       <md-input-container class="detailsinput">
         <label>Bio</label>
-        <input ng-model="profileDetails.profile.bio" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.bio" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
       
       <md-input-container class="detailsinput">
         <label>Favorite Genres</label>
-        <input ng-model="profileDetails.profile.favGenres" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.favGenres" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
       
       <md-input-container class="detailsinput">
         <label>Favorite Bands</label>
-        <input ng-model="profileDetails.profile.favBands" ng-disabled="!profileDetails.isLoggedIn">
+        <input ng-model="profileDetails.profile.favBands" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
       
       <profile-unmatched profile="profileDetails.profile"></profile-unmatched>
+      
+      <profile-map location="profileDetails.profile.location"></profile-map>
  
       <div layout="row" layout-align="center center">
         <md-button ng-click="profileDetails.save()" ui-sref="profiles" class="md-raised">Save</md-button>

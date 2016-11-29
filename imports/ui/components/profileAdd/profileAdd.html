@@ -13,10 +13,21 @@
   </md-input-container>
   <md-input-container class="detailsinput">
     <label>
-      Zipcode:
+      City:
     </label>
-    <input type="text" ng-model="profileAdd.profile.zip"/>
+    <input type="text" ng-model="profileAdd.profile.city"/>
   </md-input-container>
+  <md-input-container class="detailsinput">
+    <label>
+      State:
+    </label>
+    <input type="text" ng-model="profileAdd.profile.state"/>
+  </md-input-container>
+  <div flex>
+    <md-checkbox ng-model="profileAdd.profile.public" aria-label="Publish Profile?">
+      Publish Profile?
+    </md-checkbox>
+  </div>
   <div flex>
     <md-button ng-click="profileAdd.submit()" class="md-raised">Submit</md-button>
   </div>

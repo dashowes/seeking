@@ -7,6 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import template from './profileDetails.html';
 import { Profiles } from '../../../api/profiles/index';
 import { name as ProfileUnmatched } from '../profileUnmatched/profileUnmatched';
+import { name as ProfileMap } from '../profileMap/profileMap';
 import { name as ProfileRemove } from '../profileRemove/profileRemove';
  
 class ProfileDetails {
@@ -31,6 +32,12 @@ class ProfileDetails {
       },
       isLoggedIn() {
         return !!Meteor.userId();
+      },
+      isOwner() {
+        if (!this.profile) {
+          return false;
+        }
+        return this.profile.owner === Meteor.userId();
       }
     });
   }
@@ -48,7 +55,8 @@ class ProfileDetails {
         bio: this.profile.bio,
         favGenres: this.profile.favGenres,
         favBands: this.profile.favBands,
-        public: this.profile.public
+        public: this.profile.public,
+        location: this.profile.location
       }
     }, (error) => {
       if (error) {
@@ -67,6 +75,7 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   ProfileUnmatched,
+  ProfileMap,
   ProfileRemove
 ]).component(name, {
   template,

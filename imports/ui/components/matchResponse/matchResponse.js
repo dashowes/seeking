@@ -1,5 +1,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
+import _ from 'underscore';
  
 import { Meteor } from 'meteor/meteor';
  
@@ -9,13 +10,22 @@ class MatchResponse {
   yes() {
     this.answer('yes');
   }
+  isYes() {
+    return this.isAnswer('yes');
+  }
  
   maybe() {
     this.answer('maybe');
   }
+  isMaybe() {
+    return this.isAnswer('maybe');
+  }
  
   no() {
     this.answer('no');
+  }
+  isNo() {
+    return this.isAnswer('no');
   }
  
   answer(answer) {
@@ -26,6 +36,14 @@ class MatchResponse {
         console.log('Response done!')
       }
     });
+  }
+  isAnswer(answer) {
+    if(this.profile) {
+      return !!_.findWhere(this.profile.responses, {
+        user: Meteor.userId(),
+        response: answer
+      });
+    }
   }
 }
 
