@@ -1,0 +1,8 @@
+<ul>
+  New People:
+  <li ng-repeat="profile in profileUnmatched.profiles | unmatchedFilter:profileUmnatched.profile">
+    <div>{{ profile.name }}</div>
+    <div>{{ profile.instrument1 }}, {{ profile.instrument2 }}</div>
+    <div>{{ profile.city }}, {{ profile.state }}</div>
+  </li>
+</ul>

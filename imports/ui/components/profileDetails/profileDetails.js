@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
  
 import template from './profileDetails.html';
 import { Profiles } from '../../../api/profiles/index';
+import { name as ProfileUnmatched } from '../profileUnmatched/profileUnmatched';
 import { name as ProfileRemove } from '../profileRemove/profileRemove';
  
 class ProfileDetails {
@@ -41,11 +42,13 @@ class ProfileDetails {
       $set: {
         firstName: this.profile.firstName,
         lastName: this.profile.lastName,
-        zip: this.profile.zip,
+        city: this.profile.city,
+        state: this.profile.state,
         age: this.profile.age,
         bio: this.profile.bio,
         favGenres: this.profile.favGenres,
-        favBands: this.profile.favBands
+        favBands: this.profile.favBands,
+        public: this.profile.public
       }
     }, (error) => {
       if (error) {
@@ -63,6 +66,7 @@ const name = 'profileDetails';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
+  ProfileUnmatched,
   ProfileRemove
 ]).component(name, {
   template,

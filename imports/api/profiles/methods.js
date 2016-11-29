@@ -15,7 +15,7 @@ function getContactEmail(user) {
   return null;
 }
  
-export function invite(profileId, userId) {
+export function match(profileId, userId) {
   check(profileId, String);
   check(userId, String);
  
@@ -23,7 +23,7 @@ export function invite(profileId, userId) {
     throw new Meteor.Error(400, 'You have to be logged in!');
   }
  
-  const profile = Profile.findOne(profileId);
+  const profile = Profiles.findOne(profileId);
  
   if (!profile) {
     throw new Meteor.Error(404, 'No such profile!');
@@ -37,10 +37,10 @@ export function invite(profileId, userId) {
     throw new Meteor.Error(400, 'That profile is public. No need to invite people.');
   }
  
-  if (userId !== profile.owner && ! _.contains(profile.invited, userId)) {
+  if (userId !== profile.owner && ! _.contains(profile.matched, userId)) {
     Profiles.update(profileId, {
       $addToSet: {
-        invited: userId
+        matched: userId
       }
     });
  
@@ -52,24 +52,12 @@ export function invite(profileId, userId) {
         to,
         replyTo,
         from: 'noreply@seekingmusicapp.com',
-        subject: `Welcome to Seeking, ${profile.firstName}!`,
+        subject: `Meet ${profile.firstName} on Seeking!`,
         text: `
-          Hey ${profile.firstName}! 
+          Hey! 
           
-          Welcome to Seeking, the place where you can be your own favorite band.
-          
-          We've picked you to be part of our super awesome first set of users.
-          Since you held on to that card and entered that promo code, 
-          you'll get access to a free month of our Premium service
-          when we launch early in the new year. 
-          
-          Keep an eye on your email, as we'll be sending you the occasional update
-          (we won't be annoying; we promise) and, eventually of course, the link to get started!
-          
-          See you soon,
-          
-          Jason and Jim
-          Team Seeking
+          ${profile.firstName} just matched with you on Seeking.
+          Come check out their profile: ${Meteor.absoluteUrl()}
         `
       });
     }
@@ -77,5 +65,5 @@ export function invite(profileId, userId) {
 }
 
 Meteor.methods({
-  invite
+  match
 });

@@ -2,6 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import ngMaterial from 'angular-material';
 import uiRouter from 'angular-ui-router';
+import angularMoment from 'angular-moment';
  
 import template from './seeking.html';
 
@@ -24,8 +25,6 @@ import { name as Survey6 } from '../survey/survey6';
 import { name as Survey7 } from '../survey/survey7';
 import { name as Survey8 } from '../survey/survey8';
 import { name as SurveyDetails } from '../surveyDetails/surveyDetails';
-import { name as Messenger } from '../Messenger/Messenger';
-
  
 class Seeking {}
  
@@ -36,6 +35,7 @@ export default angular.module(name, [
   angularMeteor,
   ngMaterial,
   uiRouter,
+  angularMoment,
   ProfilesList,
   ProfileFullView,
   ProfileDetails,
@@ -55,7 +55,6 @@ export default angular.module(name, [
   Survey7,
   Survey8,
   SurveyDetails,
-  Messenger,
   'accounts.ui'
 ]).component(name, {
   template,

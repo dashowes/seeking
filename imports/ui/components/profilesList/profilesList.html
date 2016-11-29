@@ -22,15 +22,14 @@
             <md-button>{{profilesList.joinDate}}</md-button>
           </md-card-actions>
         </md-card-title>
-        <take-survey-button ng-hide="profilesList.isOwner(profile)"></take-survey-button>
-        <profile-remove ng-hide="profilesList.isOwner(profile)" profile="profile"></profile-remove>
+        <div layout="row" layout-align="center center">
+          <md-button ng-click="profilesList.match()" class="md-fab" aria-label="Match">
+            <md-icon>PATH TO HORNS</md-icon>
+          </md-button>
+        </div>
+        <take-survey-button ng-hide="!profilesList.isOwner(profile)"></take-survey-button>
+        <profile-remove ng-hide="!profilesList.isOwner(profile)" profile="profile"></profile-remove>
       </md-card>
-      
-      <div layout="row" layout-align="center center">
-        <md-button ng-click="profilesList.like()" class="md-fab" aria-label="The Horns">
-          <md-icon>PATH TO HORNS</md-icon>
-        </md-button>
-      </div>
   </div>
   
   <div class="smedia-icon-container" ng-hide="profilesList.isLoggedIn">

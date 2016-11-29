@@ -2,7 +2,6 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
-import moment from 'moment';
 
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
@@ -23,7 +22,7 @@ class ProfilesList {
     this.perPage = 1;
     this.page = 1;
     this.sort = {
-      name: 1
+      city: 1
     };
     this.searchText = '';
     
