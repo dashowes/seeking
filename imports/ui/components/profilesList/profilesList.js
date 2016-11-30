@@ -14,6 +14,7 @@ import { name as ProfileAdd } from '../profileAdd/profileAdd';
 import { name as ProfileRemove } from '../profileRemove/profileRemove';
 import { name as MatchResponse } from '../matchResponse/matchResponse';
 import { name as MatchResponsesList } from '../matchResponsesList/matchResponsesList';
+import { name as ProfileImage } from '../profileImage/profileImage';
 import { name as TakeSurveyButton } from '../takeSurveyButton/takeSurveyButton';
  
 class ProfilesList {
@@ -37,6 +38,7 @@ class ProfilesList {
     ]);
     
     this.subscribe('users');
+    this.subscribe('images');
  
     this.helpers({
       profiles() {
@@ -84,6 +86,7 @@ export default angular.module(name, [
   ProfileRemove,
   MatchResponse,
   MatchResponsesList,
+  ProfileImage,
   TakeSurveyButton
 ]).component(name, {
   template,
