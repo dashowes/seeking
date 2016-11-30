@@ -5,6 +5,7 @@ import { Meteor } from 'meteor/meteor';
  
 import template from './profileAdd.html';
 import { Profiles } from '../../../api/profiles/index';
+import { name as ProfileUpload } from '../profileUpload/profileUpload';
  
 class ProfileAdd {
   constructor() {
@@ -31,7 +32,8 @@ const name = 'profileAdd';
  
 // create a module
 export default angular.module(name, [
-  angularMeteor
+  angularMeteor,
+  ProfileUpload
 ]).component(name, {
   template,
   bindings: {
