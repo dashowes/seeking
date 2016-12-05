@@ -49,6 +49,8 @@ class ProfileDetails {
       $set: {
         firstName: this.profile.firstName,
         lastName: this.profile.lastName,
+        instrument1: this.profile.instrument1,
+        instrument2: this.profile.instrument2,
         city: this.profile.city,
         state: this.profile.state,
         age: this.profile.age,

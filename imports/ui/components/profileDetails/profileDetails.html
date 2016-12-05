@@ -12,6 +12,16 @@
       </md-input-container>
       
       <md-input-container class="detailsinput">
+        <label>Instrument 1</label>
+        <input ng-model="profileDetails.profile.instrument1" ng-disabled="!profileDetails.isOwner">
+      </md-input-container>
+      
+      <md-input-container class="detailsinput">
+        <label>Instrument 2</label>
+        <input ng-model="profileDetails.profile.instrument2" ng-disabled="!profileDetails.isOwner">
+      </md-input-container>
+      
+      <md-input-container class="detailsinput">
         <label>City</label>
         <input ng-model="profileDetails.profile.city" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
@@ -43,7 +53,7 @@
       
       <profile-unmatched profile="profileDetails.profile"></profile-unmatched>
       
-      <profile-map location="profileDetails.profile.location"></profile-map>
+      <!--<profile-map location="profileDetails.profile.location"></profile-map>-->
  
       <div layout="row" layout-align="center center">
         <md-button ng-click="profileDetails.save()" ui-sref="profiles" class="md-raised">Save</md-button>

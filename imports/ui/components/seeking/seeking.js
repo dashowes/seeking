@@ -7,7 +7,6 @@ import angularMoment from 'angular-moment';
 import template from './seeking.html';
 
 import { name as ProfilesList } from '../profilesList/profilesList';
-import { name as ProfileFullView } from '../profileFullView/profileFullView';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
@@ -37,7 +36,6 @@ export default angular.module(name, [
   uiRouter,
   angularMoment,
   ProfilesList,
-  ProfileFullView,
   ProfileDetails,
   Navigation,
   Auth,
