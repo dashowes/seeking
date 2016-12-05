@@ -21,10 +21,11 @@
     "bcrypt": "^0.8.7",
     "gm": "^1.23.0",
     "imagemagick": "^0.1.3",
-    "meteor-node-stubs": "~0.2.0",
+    "meteor-node-stubs": "^0.2.4",
     "moment": "^2.16.0",
     "ng-file-upload": "^12.2.13",
     "ng-img-crop": "^0.2.0",
+    "spawn-sync": "^1.0.15",
     "underscore": "^1.8.3"
   }
 }

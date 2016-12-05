@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import ngMaterial from 'angular-material';
 import uiRouter from 'angular-ui-router';
 import angularMoment from 'angular-moment';
- 
+
 import template from './seeking.html';
 
 import { name as ProfilesList } from '../profilesList/profilesList';
