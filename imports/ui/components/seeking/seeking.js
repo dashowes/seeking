@@ -15,14 +15,7 @@ import { name as About } from '../about/about';
 import { name as Terms } from '../terms/terms';
 import { name as Privacy } from '../privacy/privacy';
 import { name as Promo } from '../promo/promo';
-import { name as Survey1 } from '../survey/survey1';
-import { name as Survey2 } from '../survey/survey2';
-import { name as Survey3 } from '../survey/survey3';
-import { name as Survey4 } from '../survey/survey4';
-import { name as Survey5 } from '../survey/survey5';
-import { name as Survey6 } from '../survey/survey6';
-import { name as Survey7 } from '../survey/survey7';
-import { name as Survey8 } from '../survey/survey8';
+import { name as Survey1 } from '../anotherSurvey/survey1';
 import { name as SurveyDetails } from '../surveyDetails/surveyDetails';
  
 class Seeking {}
@@ -45,13 +38,6 @@ export default angular.module(name, [
   Privacy,
   Promo,
   Survey1,
-  Survey2,
-  Survey3,
-  Survey4,
-  Survey5,
-  Survey6,
-  Survey7,
-  Survey8,
   SurveyDetails,
   'accounts.ui'
 ]).component(name, {

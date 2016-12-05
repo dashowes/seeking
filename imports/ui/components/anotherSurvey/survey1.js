@@ -7,6 +7,7 @@ import { Meteor } from 'meteor/meteor';
 
 import template from './survey1.html';
 import { Profiles } from '../../../api/profiles/index';
+import { name as ProfileDetails } from '../profileDetails/profileDetails';
 
 class survey1 {
   constructor($stateParams, $scope, $reactive) {
@@ -73,7 +74,8 @@ const name = 'survey1';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  utilsPagination
+  utilsPagination,
+  ProfileDetails
 ]).component(name, {
   template,
   controllerAs: name,
@@ -81,41 +83,12 @@ export default angular.module(name, [
 })
   .config(config);
  
-function config($stateProvider, $urlRouterProvider) {
+function config($stateProvider) {
   'ngInject';
   
   $stateProvider
-  
     .state('survey1', {
       url: '/survey1',
       template: '<survey1></survey1>'
-    })
-      
-      .state('survey1.favRecords', {
-          url: '/favRecords',
-          template: '<survey1-fav-records></survey1-fav-records>'
-      })
-      
-      .state('survey1.favProducers', {
-          url: '/favProducers',
-          template: '<survey1-fav-producers></survey1-fav-producers>'
-      })
-      
-      .state('survey1.favLabels', {
-          url: '/favLabels',
-          template: '<survey1-fav-labels></survey1-fav-labels>'
-      })
-      
-      .state('survey1.skillLevel', {
-          url: '/skillLevel',
-          template: '<survey1-skill-level></survey1-skill-level>'
-      })
-      
-      .state('survey1.instrumentYears', {
-          url: '/instrumentYears',
-          template: '<survey1-instrument-years></survey1-instrument-years>'
-      });
-  
-  $urlRouterProvider.otherwise('/survey1/favRecords');
-  
+    });
 }

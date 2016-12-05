@@ -7,14 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import template from './surveyDetails.html';
 import { Profiles } from '../../../api/profiles/index';
 import { name as ProfilesList } from '../profilesList/profilesList';
-import { name as Survey1 } from '../survey/survey1';
-import { name as Survey2 } from '../survey/survey2';
-import { name as Survey3 } from '../survey/survey3';
-import { name as Survey4 } from '../survey/survey4';
-import { name as Survey5 } from '../survey/survey5';
-import { name as Survey6 } from '../survey/survey6';
-import { name as Survey7 } from '../survey/survey7';
-import { name as Survey8 } from '../survey/survey8';
+import { name as Survey1 } from '../anotherSurvey/survey1';
 
 class SurveyDetails {
     constructor($stateParams, $scope, $reactive) {
@@ -147,14 +140,7 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   ProfilesList,
-  Survey1,
-  Survey2,
-  Survey3,
-  Survey4,
-  Survey5,
-  Survey6,
-  Survey7,
-  Survey8
+  Survey1
 ]).component(name, {
   template,
   controllerAs: name,
