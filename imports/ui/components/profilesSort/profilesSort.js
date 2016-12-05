@@ -1,6 +1,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
- 
+
 import template from './profilesSort.html';
  
 class ProfilesSort {
