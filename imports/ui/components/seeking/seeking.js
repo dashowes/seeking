@@ -16,6 +16,8 @@ import { name as Terms } from '../terms/terms';
 import { name as Privacy } from '../privacy/privacy';
 import { name as Promo } from '../promo/promo';
 import { name as Survey1 } from '../anotherSurvey/survey1';
+import { name as Survey2 } from '../anotherSurvey/survey2';
+import { name as Survey3 } from '../anotherSurvey/survey3';
 import { name as SurveyDetails } from '../surveyDetails/surveyDetails';
  
 class Seeking {}
@@ -38,6 +40,8 @@ export default angular.module(name, [
   Privacy,
   Promo,
   Survey1,
+  Survey2,
+  Survey3,
   SurveyDetails,
   'accounts.ui'
 ]).component(name, {
