@@ -18,6 +18,10 @@ import { name as Promo } from '../promo/promo';
 import { name as Survey1 } from '../anotherSurvey/survey1';
 import { name as Survey2 } from '../anotherSurvey/survey2';
 import { name as Survey3 } from '../anotherSurvey/survey3';
+import { name as Survey4 } from '../anotherSurvey/survey4';
+import { name as Survey5 } from '../anotherSurvey/survey5';
+import { name as Survey6 } from '../anotherSurvey/survey6';
+import { name as Survey7 } from '../anotherSurvey/survey7';
 import { name as SurveyDetails } from '../surveyDetails/surveyDetails';
  
 class Seeking {}
@@ -42,6 +46,10 @@ export default angular.module(name, [
   Survey1,
   Survey2,
   Survey3,
+  Survey4,
+  Survey5,
+  Survey6,
+  Survey7,
   SurveyDetails,
   'accounts.ui'
 ]).component(name, {
