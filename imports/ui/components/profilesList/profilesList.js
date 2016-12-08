@@ -23,7 +23,7 @@ class ProfilesList {
  
     $reactive(this).attach($scope);
     
-    this.perPage = 1;
+    this.perPage = 10,000;
     this.page = 1;
     this.sort = {
       city: 1
