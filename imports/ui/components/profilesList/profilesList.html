@@ -41,7 +41,6 @@
             <match-response profile="profile" ng-show="profilesList.isLoggedIn"></match-response>
           </div>
           <take-survey-button ng-hide="!profilesList.isOwner(profile)"></take-survey-button>
-          <profile-remove ng-show="profilesList.isOwner(profile)" profile="profile"></profile-remove>
         </md-card-actions>
         
         <dir-pagination-controls on-page-change="profilesList.pageChanged(newPageNumber)"></dir-pagination-controls>

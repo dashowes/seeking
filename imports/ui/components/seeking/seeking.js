@@ -22,6 +22,7 @@ import { name as Survey4 } from '../anotherSurvey/survey4';
 import { name as Survey5 } from '../anotherSurvey/survey5';
 import { name as Survey6 } from '../anotherSurvey/survey6';
 import { name as Survey7 } from '../anotherSurvey/survey7';
+import { name as SurveyFinished } from '../anotherSurvey/surveyFinished';
 import { name as SurveyDetails } from '../surveyDetails/surveyDetails';
  
 class Seeking {}
@@ -50,6 +51,7 @@ export default angular.module(name, [
   Survey5,
   Survey6,
   Survey7,
+  SurveyFinished,
   SurveyDetails,
   'accounts.ui'
 ]).component(name, {
