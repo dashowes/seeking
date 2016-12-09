@@ -1,5 +1,51 @@
-<div layout="row">
-  <md-button class="md-fab md-mini"><md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon></md-button>
+<div layout="column">
+  <md-menu md-position-mode="target-right target" >
+    <md-button aria-label="Main menu" class="md-fab md-mini" ng-click="$mdOpenMenu($event)"><md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon></md-button>
+    <md-menu-content width="4">
+      <md-menu-item ng-hide="auth.isLoggedIn">
+        <md-button ui-sref="login">
+          <div layout="row" flex>
+            <p flex>Login</p>
+          </div>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item ng-hide="auth.isLoggedIn">
+        <md-button ui-sref="promo">
+          <div layout="row" flex>
+            <p flex>Sign up</p>
+          </div>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ui-sref="about">
+          <div layout="row" flex>
+            <p flex>About</p>
+          </div>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ui-sref="terms">
+          <div layout="row" flex>
+            <p flex>Terms</p>
+          </div>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ui-sref="privacy">
+          <div layout="row" flex>
+            <p flex>Privacy</p>
+          </div>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item ng-show="auth.isLoggedIn">
+        <md-button ng-click="auth.logout()" ui-sref="profiles">
+          <div layout="row" flex>
+            <p flex>Logout</p>
+          </div>
+        </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
 </div>
 
 <!--<div layout="row">-->
