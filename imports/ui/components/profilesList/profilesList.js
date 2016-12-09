@@ -7,6 +7,7 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import template from './profilesList.html';
 import { Profiles } from '../../../api/profiles/index';
+import { name as ProfileDetails } from '../profileDetails/profileDetails';
 import { name as ProfilesSort } from '../profilesSort/profilesSort';
 import { name as ProfilesMap } from '../profilesMap/profilesMap';
 import { name as ProfileAddButton } from '../profileAddButton/profileAddButton';
@@ -79,6 +80,7 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   utilsPagination,
+  ProfileDetails,
   ProfilesSort,
   ProfilesMap,
   ProfileAdd,

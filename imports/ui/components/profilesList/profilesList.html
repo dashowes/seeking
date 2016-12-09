@@ -20,6 +20,9 @@
   <div ng-hide="!profilesList.isLoggedIn" flex layout="column">
       <!--<md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">-->
       <md-card ng-repeat="profile in profilesList.profiles">
+        <!--<div layout="row" layout-align="end">-->
+        <!--  <profile-remove profile="profile"></profile-remove>-->
+        <!--</div>-->
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
