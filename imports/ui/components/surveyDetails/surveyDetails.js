@@ -152,7 +152,7 @@ function config($stateProvider) {
   'ngInject';
  
   $stateProvider.state('surveyDetails', {
-    url: '/profiles/:profileId',
+    url: '/surveyDetails/:profileId',
     template: '<survey-details></survey-details>',
     resolve: {
       currentUser($q) {
