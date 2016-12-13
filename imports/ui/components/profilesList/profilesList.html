@@ -1,7 +1,5 @@
 <div layout="column" layout-padding>
-  <div layout ng-hide="profilesList.isOwner(profile)">
-    <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
-  </div>
+  <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
   <div class="center" ng-hide="profilesList.isLoggedIn">
     <h2 ui-sref="promo" id="promoprompt">Enter your promo code</h2>
     <h3>or</h3>
