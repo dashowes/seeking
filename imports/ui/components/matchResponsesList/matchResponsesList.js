@@ -1,5 +1,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
+import uiRouter from 'angular-ui-router';
  
 import template from './matchResponsesList.html';
 
@@ -10,6 +11,7 @@ const name = 'matchResponsesList';
 // create a module
 export default angular.module(name, [
   angularMeteor,
+  uiRouter
 ]).component(name, {
   template,
   controllerAs: name,
@@ -17,4 +19,14 @@ export default angular.module(name, [
     responses: '<'
   },
   controller: MatchResponsesList
-});
+})
+  .config(config);
+
+function config($stateProvider) {
+  'ngInject';
+  $stateProvider
+    .state('matchResponsesList', {
+      url: '/matchResponsesList',
+      template: '<match-responses-list></match-responses-list>'
+    });
+}

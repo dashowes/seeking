@@ -6,7 +6,7 @@
         <input ng-model="profileDetails.profile.firstName" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
  
-      <md-input-container class="detailsinput">
+      <md-input-container class="detailsinput" ng-hide="!profileDetails.isOwner">
         <label>Last Name</label>
         <input ng-model="profileDetails.profile.lastName" ng-disabled="!profileDetails.isOwner">
       </md-input-container>

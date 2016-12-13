@@ -52,7 +52,7 @@ export function match(profileId, userId) {
         text: `
           Hey! 
           
-          ${profile.firstName} just matched with you on Seeking.
+          ${profile.firstName} just matched you on Seeking.
           Come check out their profile: ${Meteor.absoluteUrl()}
         `
       });

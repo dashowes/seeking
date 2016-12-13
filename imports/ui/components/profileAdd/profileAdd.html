@@ -23,10 +23,17 @@
     </label>
     <input type="text" ng-model="profileAdd.profile.state"/>
   </md-input-container>
-  <div flex>
-    <md-checkbox ng-model="profileAdd.profile.public" aria-label="Publish Profile?">
-      Publish Profile?
-    </md-checkbox>
+  <div flex layout="row" layout-align="center center">
+    <div flex>
+      <md-checkbox ng-model="profileAdd.profile.band" aria-label="Are you a band?">
+        Are you a band?
+      </md-checkbox>
+    </div>
+    <div flex>
+      <md-checkbox ng-model="profileAdd.profile.public" aria-label="Publish Profile?">
+        Publish Profile?
+      </md-checkbox>
+    </div>
   </div>
   <div flex>
     <md-button ng-click="profileAdd.submit()" class="md-raised">Submit</md-button>

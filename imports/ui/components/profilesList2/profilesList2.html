@@ -1,17 +1,20 @@
 <div layout="column" layout-padding>
-  <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
-  <div class="center" ng-hide="profilesList.isLoggedIn">
-    <h2 ui-sref="promo" id="promoprompt">Enter your promo code</h2>
-    <h3>or</h3>
-    <h2 ui-sref="login" id="loginprompt">Log in to create a profile!</h2>
+  
+  <div class="searchcontainer" ng-hide="!profilesList2.isLoggedIn" flex layout="row" layout-padding>
+    <md-input-container>
+      <label>Search</label>
+      <input ng-model="profilesList2.searchText">
+    </md-input-container>
+ 
+    <profiles-sort on-change="profilesList2.sortChanged(sort)" property="city" order="1"></profiles-sort>
   </div>
  
-  <div ng-hide="!profilesList.isLoggedIn" flex layout="column">
+  <div ng-hide="!profilesList2.isLoggedIn" flex layout="column">
       <!--<md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">-->
-      <md-card ng-repeat="profile in profilesList.profiles" ng-show="profilesList.isOwner(profile)">
-        <div layout="row" layout-align="end">
-          <profile-remove profile="profile"></profile-remove>
-        </div>
+      <md-card ng-repeat="profile in profilesList2.profiles" ng-show="!profilesList2.isOwner(profile)">
+        <!--<div layout="row" layout-align="end">-->
+        <!--  <profile-remove profile="profile"></profile-remove>-->
+        <!--</div>-->
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
@@ -35,21 +38,12 @@
         
         <md-card-actions>
           <div layout="row" layout-align="center center">
-            <md-button class="md-fab md-warn" ui-sref="matchResponsesList"><md-icon md-svg-icon="social:ic_group_add_24px"></md-icon></md-button>
+            <match-response profile="profile" ng-show="profilesList2.isLoggedIn"></match-response>
           </div>
         </md-card-actions>
         
         <!--<dir-pagination-controls on-page-change="profilesList.pageChanged(newPageNumber)"></dir-pagination-controls>-->
         <!--<profiles-map profiles="profilesList.profiles"></profiles-map>-->
       </md-card>
-      
-      <div layout="row" layout-align="end">
-        <md-button class="seekbutton md-fab" ui-sref="profiles2"><md-icon md-svg-icon="av:ic_fast_forward_24px"></md-icon></md-button>
-      </div>
-  </div>
-  
-  <div class="smedia-icon-container" ng-hide="profilesList.isLoggedIn">
-    <a href="http://facebook.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/fbblack.png"></a>
-    <a href="http://twitter.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/twblack.png"></a>
   </div>
 </div>

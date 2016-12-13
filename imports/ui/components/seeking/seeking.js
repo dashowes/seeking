@@ -7,6 +7,7 @@ import angularMoment from 'angular-moment';
 import template from './seeking.html';
 
 import { name as ProfilesList } from '../profilesList/profilesList';
+import { name as ProfilesList2 } from '../profilesList2/profilesList2';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
@@ -36,6 +37,7 @@ export default angular.module(name, [
   uiRouter,
   angularMoment,
   ProfilesList,
+  ProfilesList2,
   ProfileDetails,
   Navigation,
   Auth,
@@ -85,7 +87,9 @@ function config($locationProvider, $urlRouterProvider, $mdIconProvider) {
     .iconSet('navigation',
       iconPath + 'svg-sprite-navigation.svg')
     .iconSet('image',
-      iconPath + 'svg-sprite-image.svg');
+      iconPath + 'svg-sprite-image.svg')
+    .iconSet('av',
+      iconPath + 'svg-sprite-av.svg');
 }
 
 
