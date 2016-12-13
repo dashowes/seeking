@@ -1,5 +1,15 @@
 <div layout="column" layout-padding>
   <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
+  
+  <div class="landingpage" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+    <div class="landingpagewest" flex gt-xs="60" layout="column" layout-align="center center">
+      
+    </div>
+    <div class="landingpageeast" flex gt-xs="40" layout="column">
+      
+    </div>
+  </div>
+  
   <div class="center" ng-hide="profilesList.isLoggedIn">
     <h2 ui-sref="promo" id="promoprompt">Enter your promo code</h2>
     <h3>or</h3>
