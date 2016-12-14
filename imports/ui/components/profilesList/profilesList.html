@@ -1,12 +1,34 @@
 <div layout="column" layout-padding>
   <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
   
-  <div class="landingpage" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
-    <div class="landingpagewest" flex gt-xs="60" layout="column" layout-align="center center">
-      
-    </div>
-    <div class="landingpageeast" flex gt-xs="40" layout="column">
-      
+  <div class="landingpage1" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+    <img class="phonehome" src="images/smartphone.png">
+    <h2>+</h2>
+    <img class="amphome" src="images/amplifier.png">
+  </div>
+  <div class="landingpage2" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+    <span class="md-headline">Be your own favorite band.</span>
+  </div>
+  <div class="landingpage3" layout="column" layout-gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+    <div flex layout="column" layout-gt-xs="row" layout-align="center center">
+      <div class="landingpageicon" flex layout="column" layout-align="center center">
+        <img class="iconhome" src="images/searchuser.png">
+      </div>
+      <div class="landingpageblurb" flex layout="column" layout-align="center center">
+        <span class="md-subhead">Find other musicians like you, around you.</span>
+      </div>
+      <div class="landingpageicon" flex layout="column" layout-align="center center">
+        <img class="iconhome" src="images/sendmessage.png">
+      </div>
+      <div class="landingpageblurb" flex layout="column" layout-align="center center">
+        <span class="md-subhead">Reach out and connect when you find a good fit.</span>
+      </div>
+      <div class="landingpageicon" flex layout="column" layout-align="center center">
+        <img class="iconhome" src="images/hornsrough.png">
+      </div>
+      <div class="landingpageblurb" flex layout="column" layout-align="center center">
+        <span class="md-subhead">Start a new project and make some new music.</span>
+      </div>
     </div>
   </div>
   
