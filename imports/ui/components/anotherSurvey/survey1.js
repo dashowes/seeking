@@ -53,10 +53,11 @@ class survey1 {
         favProducersWeight: this.profile.favProducersWeight,
         favLabelsAnswer: this.profile.favLabelsAnswer,
         favLabelsWeight: this.profile.favLabelsWeight,
-        skillLevelAnswer: this.profile.skillLevelAnswer,
-        skillLevelWeight: this.profile.skillLevelWeight,
         instrumentYearsAnswer: this.profile.instrumentYearsAnswer,
-        instrumentYearsWeight: this.profile.instrumentYearsWeight
+        instrumentYearsWeight: this.profile.instrumentYearsWeight,
+        skillLevelAnswer1: this.profile.skillLevelAnswer1,
+        skillLevelAnswer2: this.profile.skillLevelAnswer2,
+        skillLevelWeight: this.profile.skillLevelWeight,
       }
     }, (error) => {
       if (error) {

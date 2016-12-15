@@ -47,15 +47,18 @@ class survey2 {
       _id: this.profile._id
     }, {
       $set: {
-        liveBandAnswer: this.profile.liveBandAnswer,
+        liveBandAnswer1: this.profile.liveBandAnswer1,
+        liveBandAnswer2: this.profile.liveBandAnswer2,
         liveBandWeight: this.profile.liveBandWeight,
-        gearAnswer: this.profile.gearAnswer,
+        gearAnswer1: this.profile.gearAnswer1,
+        gearAnswer2: this.profile.gearAnswer2,
         gearWeight: this.profile.gearWeight,
         priorityAnswer: this.profile.priorityAnswer,
         priorityWeight: this.profile.priorityWeight,
         productionAnswer: this.profile.productionAnswer,
         productionWeight: this.profile.productionWeight,
-        moneyAnswer: this.profile.moneyAnswer,
+        moneyAnswer1: this.profile.moneyAnswer1,
+        moneyAnswer2: this.profile.moneyAnswer2,
         moneyWeight: this.profile.moneyWeight
       }
     }, (error) => {

@@ -55,7 +55,8 @@ class survey3 {
         touringWeight: this.profile.touringWeight,
         recordingAnswer: this.profile.recordingAnswer,
         recordingWeight: this.profile.recordingWeight,
-        songwritingAnswer: this.profile.songwritingAnswer,
+        songwritingAnswer1: this.profile.songwritingAnswer1,
+        songwritingAnswer2: this.profile.songwritingAnswer2,
         songWritingWeight: this.profile.songWritingWeight
       }
     }, (error) => {

@@ -156,7 +156,22 @@
                     <div flex layout="column" class="sliderquestioncontainer">
                         <span class="md-subhead">How involved do you wish to be with songwriting?</span>
                         <div flex layout="row" layout-align="center center" class="slidercontainer">
-                            <md-slider flex="95" md-discrete ng-model="survey3.profile.songwritingAnswer" step="1" min="1" max="5" aria-label="importance" class="weightslider"></md-slider>
+                            <md-slider flex="95" md-discrete ng-model="survey3.profile.songwritingAnswer1" step="1" min="1" max="5" aria-label="importance" class="weightslider"></md-slider>
+                        </div>
+                        <div flex layout>
+                            <div flex layout>
+                                <span class="sliderlabel small md-body-1">Never</span>
+                            </div>
+                            <div flex layout layout-align="end">
+                                <span class="sliderlabel small md-body-1">A lot</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div flex layout="column" class="sliderquestioncontainer">
+                        <span class="md-subhead">How would you want a future bandmate to answer this?</span>
+                        <div flex layout="row" layout-align="center center" class="slidercontainer">
+                            <md-slider flex="95" md-discrete ng-model="survey3.profile.songwritingAnswer2" step="1" min="1" max="5" aria-label="importance" class="weightslider"></md-slider>
                         </div>
                         <div flex layout>
                             <div flex layout>
