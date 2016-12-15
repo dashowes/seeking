@@ -9,6 +9,9 @@
   <div class="landingpage2" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
     <span class="md-headline">Be your own favorite band.</span>
   </div>
+  
+  <md-divider ng-hide="profilesList.isLoggedIn"></md-divider>
+  
   <div class="landingpage3" layout="column" layout-gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
     <div flex layout="column" layout-gt-xs="row" layout-align="center center">
       <div class="landingpageicon" flex layout="column" layout-align="center center">
@@ -32,12 +35,27 @@
     </div>
   </div>
   
-  <div class="center" ng-hide="profilesList.isLoggedIn">
-    <h2 ui-sref="promo" id="promoprompt">Enter your promo code</h2>
+  <md-divider ng-hide="profilesList.isLoggedIn"></md-divider>
+  
+  <div flex layout="column" class="center" ng-hide="profilesList.isLoggedIn">
+    <div flex layout="row" layout-align="center center">
+      <h2 ui-sref="promo" id="promoprompt">Enter your promo code</h2>
+    </div>
     <h3>or</h3>
-    <h2 ui-sref="login" id="loginprompt">Log in to create a profile!</h2>
+    <div flex layout="row" layout-align="center center">
+      <h2 ui-sref="login" id="loginprompt">Log in to create a profile!</h2>
+    </div>
   </div>
- 
+  
+  <md-divider ng-hide="profilesList.isLoggedIn"></md-divider>
+  
+  <div class="smedia-icon-container" ng-hide="profilesList.isLoggedIn">
+    <a href="http://facebook.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/fbblack.png"></a>
+    <a href="http://twitter.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/twblack.png"></a>
+  </div>
+  
+  <div class="small" ng-hide="profilesList.isLoggedIn" layout="row" layout-align="center center">&copy; 2016 Seeking LLC, all rights reserved</div>
+
   <div ng-hide="!profilesList.isLoggedIn" flex layout="column">
       <!--<md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">-->
       <md-card ng-repeat="profile in profilesList.profiles" ng-show="profilesList.isOwner(profile)">
@@ -78,10 +96,5 @@
       <div layout="row" layout-align="end">
         <md-button class="seekbutton md-fab" ui-sref="profiles2"><md-icon md-svg-icon="av:ic_fast_forward_24px"></md-icon></md-button>
       </div>
-  </div>
-  
-  <div class="smedia-icon-container" ng-hide="profilesList.isLoggedIn">
-    <a href="http://facebook.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/fbblack.png"></a>
-    <a href="http://twitter.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/twblack.png"></a>
   </div>
 </div>

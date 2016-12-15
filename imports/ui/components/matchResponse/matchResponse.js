@@ -5,6 +5,7 @@ import _ from 'underscore';
 import { Meteor } from 'meteor/meteor';
  
 import template from './matchResponse.html';
+import { name as ProfileUnmatched } from '../profileUnmatched/profileUnmatched';
  
 class MatchResponse {
   yes() {
@@ -51,7 +52,8 @@ const name = 'matchResponse';
  
 // create a module
 export default angular.module(name, [
-  angularMeteor
+  angularMeteor,
+  ProfileUnmatched
 ]).component(name, {
   template,
   controllerAs: name,

@@ -1,4 +1,4 @@
-<div class="detailsform" layout="column" layout-padding>
+<div flex class="detailsform" layout="column" layout-padding>
   <div layout="column" layout-gt-sm="row"  layout-padding>
     <form flex layout="column">
       <md-input-container class="detailsinput">
@@ -6,10 +6,10 @@
         <input ng-model="profileDetails.profile.firstName" ng-disabled="!profileDetails.isOwner">
       </md-input-container>
  
-      <md-input-container class="detailsinput" ng-hide="!profileDetails.isOwner">
-        <label>Last Name</label>
-        <input ng-model="profileDetails.profile.lastName" ng-disabled="!profileDetails.isOwner">
-      </md-input-container>
+      <!--<md-input-container class="detailsinput" ng-hide="!profileDetails.isOwner">-->
+      <!--  <label>Last Name</label>-->
+      <!--  <input ng-model="profileDetails.profile.lastName" ng-disabled="!profileDetails.isOwner">-->
+      <!--</md-input-container>-->
       
       <md-input-container class="detailsinput">
         <label>Instrument 1</label>
@@ -56,7 +56,8 @@
       <!--<profile-map location="profileDetails.profile.location"></profile-map>-->
       <div layout="row">
         <div layout="row" layout-align>
-          <md-button ng-click="profileDetails.save()" ui-sref="profiles" class="md-raised">Save</md-button>
+          <md-button ng-show="profileDetails.isOwner" ng-click="profileDetails.save()" ui-sref="profiles" class="md-raised">Save</md-button>
+          <md-button ng-show="!profileDetails.isOwner" ui-sref="profiles2" class="md-raised">Back</md-button>
           <md-button ng-show="profileDetails.isOwner" ui-sref="survey1" class="md-raised md-warn">Take Survey</md-button>
           <md-button ng-show="!profileDetails.isOwner" ui-sref="surveyDetails({ profileId: profile._id })" class="md-raised md-accent">View Survey Answers</md-button>
         </div>

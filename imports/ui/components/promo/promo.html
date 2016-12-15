@@ -5,6 +5,13 @@
                 <label>Promo Code</label>
                 <input ng-model="promo.profile.promoCode">
             </md-input-container>
+            <div flex layout="row" layout-align="center center">
+                <div flex>
+                  <md-checkbox ng-model="promo.profile.agreeToTerms" aria-label="Agree to terms" required>
+                    By checking this box, you agree to the <span ui-sref="terms">terms of use</span>.
+                  </md-checkbox>
+                </div>
+            </div>
             <md-button class="md-raised md-accent" aria-label="Enter your promo code" ui-sref="register">
                 Go!
             </md-button>
