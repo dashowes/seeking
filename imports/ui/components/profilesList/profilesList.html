@@ -60,13 +60,16 @@
       <!--<md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">-->
       <md-card ng-repeat="profile in profilesList.profiles" ng-show="profilesList.isOwner(profile)">
         <div layout="row" layout-align="end">
-          <profile-remove profile="profile"></profile-remove>
+          
         </div>
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
-              {{profile.firstName}}
-            </span>
+            <div flex>
+              <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
+                {{profile.firstName}}
+              </span>
+              <profile-remove profile="profile"></profile-remove>
+            </div>
             <md-card-title-media ng-if="profile.images">
               <div class="md-media-lg card-media">
                 <profile-image images="profile.images"></profile-image>
@@ -85,7 +88,7 @@
         
         <md-card-actions>
           <div layout="row" layout-align="center center">
-            <md-button class="md-fab md-warn" ui-sref="matchResponsesList({ profileId: profile._id })"><md-icon md-svg-icon="content:ic_inbox_24px"></md-icon></md-button>
+            <md-button class="md-fab" ui-sref="matchResponsesList({ profileId: profile._id })"><md-icon md-svg-icon="content:ic_inbox_24px"></md-icon></md-button>
           </div>
         </md-card-actions>
         

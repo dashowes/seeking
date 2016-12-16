@@ -47,13 +47,17 @@ class survey5 {
       _id: this.profile._id
     }, {
       $set: {
-        vehicleAnswer: this.profile.vehicleAnswer,
+        vehicleAnswer1: this.profile.vehicleAnswer1,
+        vehicleAnswer2: this.profile.vehicleAnswer2,
         vehicleWeight: this.profile.vehicleWeight,
-        vanAnswer: this.profile.vanAnswer,
+        vanAnswer1: this.profile.vanAnswer1,
+        vanAnswer2: this.profile.vanAnswer2,
         vanWeight: this.profile.vanWeight,
-        singAnswer: this.profile.singAnswer,
+        singAnswer1: this.profile.singAnswer1,
+        singAnswer2: this.profile.singAnswer2,
         singWeight: this.profile.singWeight,
-        harmonizeAnswer: this.profile.harmonizeAnswer,
+        harmonizeAnswer1: this.profile.harmonizeAnswer1,
+        harmonizeAnswer2: this.profile.harmonizeAnswer2,
         harmonizeWeight: this.profile.harmonizeWeight,
         merchAnswer: this.profile.merchAnswer,
         merchWeight: this.profile.merchWeight
