@@ -25,10 +25,18 @@
                 <profile-image images="profile.images"></profile-image>
               </div>
             </md-card-title-media>
-            <span class="md-subhead">{{profile.age}}</span>
-            <span class="md-subhead">{{profile.city}}, {{profile.state}}</span>
-            <span class="md-subhead">{{profile.instrument1}}<span ng-hide="!profile.instrument2">,</span> {{profile.instrument2}}</span>
-            <span class="md-subhead">{{profile.bio}}</span>
+            
+            <div flex layout="column" class="browseinfo">   
+                <!--<span class="browselabel" ng-hide="!profile.age">Age</span>-->
+                <span class="browsetext">{{profile.age}}</span>
+                <!--<span class="browselabel" ng-hide="!profile.city">City</span>-->
+                <span class="browsetext">{{profile.city}}, {{profile.state}}</span>
+                <!--<span class="browselabel" ng-hide="!profile.instrument1">Instruments</span>-->
+                <span class="browsetext">{{profile.instrument1}}<span ng-hide="!profile.instrument2">,</span> {{profile.instrument2}}</span>
+                <!--<span class="browselabel" id="biolabel" ng-hide="!profile.bio">Bio</span>-->
+                <span class="browsetext">{{profile.bio}}</span>
+            </div> 
+            
           </md-card-title-text>
           <md-card-content layout="column" layout-align="center">
             <!--<span class="md-subhead pctmatch">{{profilesList.pctMatch}}% Match<span>-->
