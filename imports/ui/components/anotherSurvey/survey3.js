@@ -9,7 +9,7 @@ import template from './survey3.html';
 import { Profiles } from '../../../api/profiles/index';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 
-class survey3 {
+class Survey3 {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
@@ -57,7 +57,7 @@ class survey3 {
         recordingWeight: this.profile.recordingWeight,
         songwritingAnswer1: this.profile.songwritingAnswer1,
         songwritingAnswer2: this.profile.songwritingAnswer2,
-        songWritingWeight: this.profile.songWritingWeight
+        songwritingWeight: this.profile.songwritingWeight
       }
     }, (error) => {
       if (error) {
@@ -80,7 +80,7 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: survey3
+  controller: Survey3
 })
   .config(config);
  

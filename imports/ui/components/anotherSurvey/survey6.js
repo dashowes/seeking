@@ -9,7 +9,7 @@ import template from './survey6.html';
 import { Profiles } from '../../../api/profiles/index';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 
-class survey6 {
+class Survey6 {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
@@ -79,7 +79,7 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: survey6
+  controller: Survey6
 })
   .config(config);
  

@@ -9,7 +9,7 @@ import template from './survey1.html';
 import { Profiles } from '../../../api/profiles/index';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 
-class survey1 {
+class Survey1 {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
  
@@ -48,13 +48,9 @@ class survey1 {
     }, {
       $set: {
         favRecordsAnswer: this.profile.favRecordsAnswer,
-        favRecordsWeight: this.profile.favRecordsWeight,
         favProducersAnswer: this.profile.favProducersAnswer,
-        favProducersWeight: this.profile.favProducersWeight,
         favLabelsAnswer: this.profile.favLabelsAnswer,
-        favLabelsWeight: this.profile.favLabelsWeight,
         instrumentYearsAnswer: this.profile.instrumentYearsAnswer,
-        instrumentYearsWeight: this.profile.instrumentYearsWeight,
         skillLevelAnswer1: this.profile.skillLevelAnswer1,
         skillLevelAnswer2: this.profile.skillLevelAnswer2,
         skillLevelWeight: this.profile.skillLevelWeight,
@@ -80,7 +76,7 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: survey1
+  controller: Survey1
 })
   .config(config);
  
