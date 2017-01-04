@@ -17,7 +17,7 @@
         <!--</div>-->
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline" ui-sref="profileDetails({ profileId: profile._id })">
+            <span class="md-headline" ui-sref="profileDetails2({ profileId: profile._id })">
               {{profile.firstName}}
             </span>
             <md-card-title-media ng-if="profile.images">
@@ -26,7 +26,7 @@
               </div>
             </md-card-title-media>
             <span class="md-subhead">{{profile.age}}</span>
-             <span class="md-subhead">{{profile.city}}, {{profile.state}}</span>
+            <span class="md-subhead">{{profile.city}}, {{profile.state}}</span>
             <span class="md-subhead">{{profile.instrument1}}<span ng-hide="!profile.instrument2">,</span> {{profile.instrument2}}</span>
             <span class="md-subhead">{{profile.bio}}</span>
           </md-card-title-text>

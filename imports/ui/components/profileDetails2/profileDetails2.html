@@ -1,0 +1,35 @@
+<div flex class="detailsform" layout="column" layout-padding>
+  <div layout="column" layout-gt-sm="row"  layout-padding>
+    <div flex layout="column">
+        <span class="md-headline">{{profileDetails2.profile.firstName}}</span>
+        <md-divider class="detailsdivider"></md-divider>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.age">Age</span>
+        <span class="md-subhead">{{profileDetails2.profile.age}}</span>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.city">City</span>
+        <span class="md-subhead">{{profileDetails2.profile.city}}</span> 
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.state">State</span>
+        <span class="md-subhead">{{profileDetails2.profile.state}}</span>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.instrument1">Instrument 1</span>
+        <span class="md-subhead">{{profileDetails2.profile.instrument1}}</span>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.instrument2">Instrument 2</span>
+        <span class="md-subhead">{{profileDetails2.profile.instrument2}}</span>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.favGenres">Favorite Genres</span>
+        <span class="md-subhead">{{profileDetails2.profile.favGenres}}</span>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.favBands">Favorite Bands/Artists</span>
+        <span class="md-subhead">{{profileDetails2.profile.favBands}}</span>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.bio">Bio</span>
+        <span class="md-subhead">{{profileDetails2.profile.bio}}</span>
+      
+      <md-divider class="detailsdivider"></md-divider>
+      <div layout="row" class="bottombuttons">
+        <div layout="row" layout-align>
+          <md-button ng-show="profileDetails.isOwner" ng-click="profileDetails.save()" ui-sref="profiles" class="md-raised">Save</md-button>
+          <md-button ng-show="!profileDetails.isOwner" ui-sref="profiles2" class="md-raised">Back</md-button>
+          <md-button ng-show="profileDetails.isOwner" ui-sref="survey1" class="md-raised md-warn">Take Survey</md-button>
+          <md-button ng-show="!profileDetails.isOwner" ui-sref="surveyDetails({ profileId: profile._id })" class="md-raised md-accent">View Survey Answers</md-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

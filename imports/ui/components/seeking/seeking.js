@@ -9,6 +9,7 @@ import template from './seeking.html';
 import { name as ProfilesList } from '../profilesList/profilesList';
 import { name as ProfilesList2 } from '../profilesList2/profilesList2';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
+import { name as ProfileDetails2 } from '../profileDetails2/profileDetails2';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
 import { name as Bottom } from '../bottom/bottom';
@@ -39,6 +40,7 @@ export default angular.module(name, [
   ProfilesList,
   ProfilesList2,
   ProfileDetails,
+  ProfileDetails2,
   Navigation,
   Auth,
   Bottom,
