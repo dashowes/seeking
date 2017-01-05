@@ -85,15 +85,14 @@
         </div> 
       </md-card-content>
 
-
-        <md-card-actions>
-          <div layout="row" layout-align="center center">
-            <img class="spotify" src="images/spotifyblack.png">
-            <md-button class="md-fab" ui-sref="matchResponsesList({ profileId: profile._id })"><img class="pickiconbig" src="images/pickplain.png"></md-icon></md-button>
-            <md-button ui-sref="survey1({ profileId: profile._id })" class="md-fab"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
-            <img class="soundcloud" src="images/soundcloudblack.png">
-          </div>
-        </md-card-actions>
+      <md-card-actions>
+        <div layout="row" layout-align="center center">
+          <img class="spotify" src="images/spotifyblack.png">
+          <md-button class="md-fab" ui-sref="matchResponsesList({ profileId: profile._id })"><img class="pickiconbig" src="images/pickplain.png"></md-icon></md-button>
+          <md-button ui-sref="survey1({ profileId: profile._id })" class="md-fab"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
+          <img class="soundcloud" src="images/soundcloudblack.png">
+        </div>
+      </md-card-actions>
         
         <!--<dir-pagination-controls on-page-change="profilesList.pageChanged(newPageNumber)"></dir-pagination-controls>-->
         <!--<profiles-map profiles="profilesList.profiles"></profiles-map>-->
