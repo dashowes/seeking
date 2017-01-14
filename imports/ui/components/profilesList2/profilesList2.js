@@ -27,7 +27,7 @@ class ProfilesList2 {
     this.perPage = 10,000;
     this.page = 1;
     this.sort = {
-      city: 1
+      instrument: 1
     };
     this.searchText = '';
     
