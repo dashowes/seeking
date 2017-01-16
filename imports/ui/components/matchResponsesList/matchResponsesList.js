@@ -9,6 +9,7 @@ import { Profiles } from '../../../api/profiles/index';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 import { name as ProfilesSort } from '../profilesSort/profilesSort';
 import { name as MatchResponse } from '../matchResponse/matchResponse';
+import { name as MatchResponseUsers } from '../matchResponseUsers/matchResponseUsers';
 import { name as ProfileImage } from '../profileImage/profileImage';
 
 class MatchResponsesList {
@@ -75,6 +76,7 @@ export default angular.module(name, [
   ProfileDetails,
   ProfilesSort,
   MatchResponse,
+  MatchResponseUsers,
   ProfileImage
 ]).component(name, {
   template,

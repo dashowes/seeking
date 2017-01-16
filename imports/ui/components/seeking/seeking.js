@@ -8,6 +8,7 @@ import template from './seeking.html';
 
 import { name as ProfilesList } from '../profilesList/profilesList';
 import { name as ProfilesList2 } from '../profilesList2/profilesList2';
+import { name as ProfilesList3 } from '../profilesList3/profilesList3';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 import { name as ProfileDetails2 } from '../profileDetails2/profileDetails2';
 import { name as Navigation } from '../navigation/navigation';
@@ -39,6 +40,7 @@ export default angular.module(name, [
   angularMoment,
   ProfilesList,
   ProfilesList2,
+  ProfilesList3,
   ProfileDetails,
   ProfileDetails2,
   Navigation,

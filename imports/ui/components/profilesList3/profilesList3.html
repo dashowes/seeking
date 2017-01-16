@@ -1,16 +1,11 @@
 <div layout="column" layout-padding>
-  
-  <div class="searchcontainer" ng-hide="!profilesList2.isLoggedIn" flex layout="row" layout-padding>
-    <md-input-container>
-      <label>Search</label>
-      <input ng-model="profilesList2.searchText">
-    </md-input-container>
-    <profiles-sort on-change="profilesList2.sortChanged(sort)" property="city" order="1"></profiles-sort>
-  </div>
+    
+    <md-subheader class="md-no-sticky">Users who matched with you</md-subheader>
  
-  <div ng-hide="!profilesList2.isLoggedIn" flex layout="column">
+    <div ng-hide="!profilesList3.isLoggedIn" flex layout="column">
       <!--<md-card dir-paginate="profile in profilesList2.profiles | itemsPerPage: profilesList2.perPage" total-items="profilesList.profilesCount">-->
-      <md-card ng-repeat="profile in profilesList2.profiles" ng-show="!profilesList2.isOwner(profile)">
+      <!--<md-card ng-repeat="profile in profilesList3.profiles | filter:{ response: matchResponseUsers.type }" ng-show="!profilesList3.isOwner(profile)">-->
+      <md-card ng-repeat="profile in profilesList3.profiles | filter:{ response: matchResponse.isYes() }" ng-show="!profilesList3.isOwner(profile)">
       <img src="images/jch.jpg" class="md-card-image" alt="{{profile.firstName}}">
       <!--<profile-image images="profile.images"></profile-image>-->
       <md-card-title>
@@ -41,8 +36,8 @@
           <img class="spotifysmall" src="images/spotifyblack.png">
           <md-button ui-sref="surveyDetails({ profileId: profile._id })" class="md-fab md-mini"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
           <div layout="row" class="matchresponsebuttons">
-            <md-button ng-show="profilesList2.isLoggedIn" class="md-fab md-mini" ng-click="matchResponse.yes()"><img class="hornsiconsmall" src="images/horns.png"></md-icon></md-button>
-            <md-button ng-show="profilesList2.isLoggedIn" class="md-fab md-mini"><img class="msgiconsmall" src="images/msgbubb.png"></md-button>
+            <md-button ng-show="profilesList3.isLoggedIn" class="md-fab md-mini" ng-click="matchResponse.yes()"><img class="hornsiconsmall" src="images/horns.png"></md-icon></md-button>
+            <md-button ng-show="profilesList3.isLoggedIn" class="md-fab md-mini"><img class="msgiconsmall" src="images/msgbubb.png"></md-button>
           </div>
           <img class="soundcloudsmall" src="images/soundcloudblack.png">
         </div>

@@ -5,7 +5,7 @@ import utilsPagination from 'angular-utils-pagination';
 
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
-import template from './profilesList2.html';
+import template from './profilesList3.html';
 import { Profiles } from '../../../api/profiles/index';
 import { name as ProfileDetails } from '../profileDetails/profileDetails';
 import { name as ProfilesSort } from '../profilesSort/profilesSort';
@@ -20,7 +20,7 @@ import { name as MatchResponseUsers } from '../matchResponseUsers/matchResponseU
 import { name as ProfileImage } from '../profileImage/profileImage';
 import { name as TakeSurveyButton } from '../takeSurveyButton/takeSurveyButton';
  
-class ProfilesList2 {
+class ProfilesList3 {
   constructor($scope, $reactive) {
     'ngInject';
  
@@ -75,7 +75,7 @@ class ProfilesList2 {
   
 }
  
-const name = 'profilesList2';
+const name = 'profilesList3';
  
 // create a module
 export default angular.module(name, [
@@ -97,15 +97,15 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: ProfilesList2
+  controller: ProfilesList3
 })
   .config(config);
  
 function config($stateProvider) {
   'ngInject';
   $stateProvider
-    .state('profiles2', {
-      url: '/profiles2',
-      template: '<profiles-list-2></profiles-list-2>'
+    .state('profiles3', {
+      url: '/profiles3/:profileId',
+      template: '<profiles-list-3></profiles-list-3>'
     });
 }

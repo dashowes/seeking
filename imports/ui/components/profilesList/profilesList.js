@@ -13,8 +13,10 @@ import { name as ProfilesMap } from '../profilesMap/profilesMap';
 import { name as ProfileAddButton } from '../profileAddButton/profileAddButton';
 import { name as ProfileAdd } from '../profileAdd/profileAdd';
 import { name as ProfileRemove } from '../profileRemove/profileRemove';
+import { name as ProfileUnmatched } from '../profileUnmatched/profileUnmatched';
 import { name as MatchResponse } from '../matchResponse/matchResponse';
 import { name as MatchResponsesList } from '../matchResponsesList/matchResponsesList';
+import { name as MatchResponseUsers } from '../matchResponseUsers/matchResponseUsers';
 import { name as ProfileImage } from '../profileImage/profileImage';
 import { name as TakeSurveyButton } from '../takeSurveyButton/takeSurveyButton';
  
@@ -86,8 +88,10 @@ export default angular.module(name, [
   ProfileAdd,
   ProfileAddButton,
   ProfileRemove,
+  ProfileUnmatched,
   MatchResponse,
   MatchResponsesList,
+  MatchResponseUsers,
   ProfileImage,
   TakeSurveyButton
 ]).component(name, {
