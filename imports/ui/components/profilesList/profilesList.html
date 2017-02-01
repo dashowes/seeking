@@ -69,7 +69,7 @@
             <span class="browseheadline md-headline" ui-sref="profileDetails({ profileId: profile._id })">
               {{profile.firstName}}
             </span>
-            <md-button class="browsesocial md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button>
+            <a href="http://{{profile.fbUrl}}" target="_blank"><md-button class="browsesocial md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>
             <md-button class="browsesocial2 md-fab md-mini md-warn"><img class="soundcloudwhite" src="images/soundcloudwhite.png"></md-button>
           </div>
         </md-card-title-text>

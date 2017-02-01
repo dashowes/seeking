@@ -16,9 +16,11 @@
       <md-card-title>
         <md-card-title-text>
           <div flex layout="row">
-            <span class="browseheadline md-headline" ui-sref="profileDetails2({ profileId: profile._id })">
+            <span class="browseheadline2 md-headline" ui-sref="profileDetails2({ profileId: profile._id })">
               {{profile.firstName}}
             </span>
+            <a href="http://{{profile.fbUrl}}" target="_blank"><md-button class="browsesocial3 md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>
+            <a href="http://{{profile.scUrl}}" target="_blank"><md-button class="browsesocial4 md-fab md-mini md-warn"><img class="soundcloudwhite" src="images/soundcloudwhite.png"></md-button></a>
           </div>
         </md-card-title-text>
       </md-card-title>

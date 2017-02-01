@@ -57,6 +57,8 @@ class ProfileDetails {
         bio: this.profile.bio,
         favGenres: this.profile.favGenres,
         favBands: this.profile.favBands,
+        fbUrl: this.profile.fbUrl,
+        scUrl: this.profile.scUrl,
         public: this.profile.public,
         location: this.profile.location
       }
