@@ -9,44 +9,13 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:200" rel="stylesheet">
 </head>
 <body>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1180998265268863',
-          xfbml      : true,
-          version    : 'v2.8'
-        });
-    
-        function onLogin(response) {
-          if (response.status == 'connected') {
-            FB.api('/me?fields=first_name', function(data) {
-              var welcomeBlock = document.getElementById('fb-welcome');
-              welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
-            });
-          }
-        }
-        
-        FB.getLoginStatus(function(response) {
-          // Check login status on load, and if the user is
-          // already logged in, go directly to the welcome message.
-          if (response.status == 'connected') {
-            onLogin(response);
-          } else {
-            // Otherwise, show Login dialog first.
-            FB.login(function(response) {
-              onLogin(response);
-            }, {scope: 'user_friends, email'});
-          }
-        });
-      };
-    
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <!--<div id="fb-root"></div>-->
+    <!--<script>(function(d, s, id) {-->
+    <!--  var js, fjs = d.getElementsByTagName(s)[0];-->
+    <!--  if (d.getElementById(id)) return;-->
+    <!--  js = d.createElement(s); js.id = id;-->
+    <!--  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1180998265268863";-->
+    <!--  fjs.parentNode.insertBefore(js, fjs);-->
+    <!--}(document, 'script', 'facebook-jssdk'));</script>-->
     <seeking></seeking>
 </body>

@@ -11,8 +11,8 @@
   <div ng-hide="!profilesList2.isLoggedIn" flex layout="column">
       <!--<md-card dir-paginate="profile in profilesList2.profiles | itemsPerPage: profilesList2.perPage" total-items="profilesList.profilesCount">-->
       <md-card ng-repeat="profile in profilesList2.profiles" ng-show="!profilesList2.isOwner(profile)">
-      <img src="images/jch.jpg" class="md-card-image" alt="{{profile.firstName}}">
-      <!--<profile-image images="profile.images"></profile-image>-->
+      <!--<img src="images/jch.jpg" class="md-card-image" alt="{{profile.firstName}}">-->
+      <profile-image images="profile.images"></profile-image>
       <md-card-title>
         <md-card-title-text>
           <div flex layout="row">
