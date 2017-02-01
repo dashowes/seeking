@@ -1,6 +1,6 @@
 <div layout="column" layout-padding>
     
-    <md-subheader class="md-no-sticky">Users who matched with you</md-subheader>
+    <md-subheader class="md-no-sticky">Users who matched with you:</md-subheader>
  
     <div ng-hide="!profilesList3.isLoggedIn" flex layout="column">
       <!--<md-card dir-paginate="profile in profilesList2.profiles | itemsPerPage: profilesList2.perPage" total-items="profilesList.profilesCount">-->
@@ -33,13 +33,13 @@
         
       <md-card-actions>
         <div layout="row" layout-align="center center">
-          <img class="spotifysmall" src="images/spotifyblack.png">
-          <md-button ui-sref="surveyDetails({ profileId: profile._id })" class="md-fab md-mini"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
+          <!--<img class="spotifysmall" src="images/spotifyblack.png">-->
+          <md-button ui-sref="surveyDetails({ profileId: profile._id })" class="md-fab"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
           <div layout="row" class="matchresponsebuttons">
-            <md-button ng-show="profilesList3.isLoggedIn" class="md-fab md-mini" ng-click="matchResponse.yes()"><img class="hornsiconsmall" src="images/horns.png"></md-icon></md-button>
-            <md-button ng-show="profilesList3.isLoggedIn" class="md-fab md-mini"><img class="msgiconsmall" src="images/msgbubb.png"></md-button>
+            <md-button ng-show="profilesList3.isLoggedIn" class="md-fab" ng-click="matchResponse.yes()"><img class="hornsiconbig" src="images/horns.png"></md-icon></md-button>
+            <md-button ng-show="profilesList3.isLoggedIn" class="md-fab"><img class="msgiconbig" src="images/msgbubb.png"></md-button>
           </div>
-          <img class="soundcloudsmall" src="images/soundcloudblack.png">
+          <!--<img class="soundcloudsmall" src="images/soundcloudblack.png">-->
         </div>
       </md-card-actions>
         

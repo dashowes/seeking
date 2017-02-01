@@ -1,4 +1,5 @@
 <div layout="column" layout-padding>
+  
   <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
   
   <div class="landingpage1" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
@@ -87,10 +88,10 @@
 
       <md-card-actions>
         <div layout="row" layout-align="center center">
-          <img class="spotify" src="images/spotifyblack.png">
+          <!--<img class="spotify" src="images/spotifyblack.png">-->
           <md-button class="md-fab" ui-sref="profiles3({ profileId: profile._id })"><img class="pickiconbig" src="images/pickplain.png"></md-icon></md-button>
           <md-button ui-sref="survey1({ profileId: profile._id })" class="md-fab"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
-          <img class="soundcloud" src="images/soundcloudblack.png">
+          <!--<img class="soundcloud" src="images/soundcloudblack.png">-->
         </div>
       </md-card-actions>
         
