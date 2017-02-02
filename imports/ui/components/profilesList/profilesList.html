@@ -11,32 +11,75 @@
     <span class="md-headline">Be your own favorite band.</span>
   </div>
   
-  <md-divider ng-hide="profilesList.isLoggedIn"></md-divider>
+  <!--<md-divider ng-hide="profilesList.isLoggedIn"></md-divider>-->
   
-  <div class="landingpage3" layout="column" layout-gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
-    <div flex layout="column" layout-gt-xs="row" layout-align="center center">
-      <div class="landingpageicon" flex layout="column" layout-align="center center">
-        <img class="iconhome" src="images/seek.png">
+  <div flex class="landingpage4" layout="column" layout-align="center" ng-hide="profilesList.isLoggedIn">
+    <div flex class="greetingblurb">
+      <span flex class="greetingheadline md-headline">
+        We help music happen.
+      </span>
+      <p class="missionstatement">
+        One of the biggest hurdles in starting any musical project is finding the right people to work with.
+        Everyone has a unique set of ideas and standards that deserve to be fulfilled. With our matching service,
+        we can help you find the best people to work with to achieve your goals.
+        Don't just settle for a band you can find. With Seeking, you can create the band you've always wanted.
+      </p>
+    </div>
+  </div>
+  
+  <div class="landingpage3" layout="column" ng-hide="profilesList.isLoggedIn">
+    <span class="explainerheadline md-headline">How it works:</span>
+    
+    <div layout="column" class="landingpage5">
+      <div layout="row" class="explainer">
+        <div class="landingpageicon">
+          <img class="iconhome" src="images/plusicon.png">
+        </div>
+        <div class="landingpageblurb" layout="column">
+          <span class="blurbtext1">Create a profile.</span>
+          <span class="blurbtext2">Tell us about who you are and where you're from.</span>
+        </div>
       </div>
-      <div class="landingpageblurb" flex layout="column" layout-align="center center">
-        <span class="md-subhead">Find other musicians like you, around you.</span>
+      <div layout="row" class="explainer">
+        <div class="landingpageicon">
+          <img class="iconhome" src="images/surveyicon.png">
+        </div>
+        <div class="landingpageblurb" layout="column">
+          <span class="blurbtext1">Take our survey.</span>
+          <span class="blurbtext2">Let us know what makes you tick as a musician.</span>
+        </div>
       </div>
-      <div class="landingpageicon" flex layout="column" layout-align="center center">
-        <img class="iconhome" src="images/msgbubb.png">
+      <div layout="row" class="explainer">
+        <div class="landingpageicon">
+          <img class="iconhome" src="images/seek.png">
+        </div>
+        <div class="landingpageblurb" layout="column">
+          <span class="blurbtext1">Seek.</span>
+          <span class="blurbtext2">Find other musicians like you, around you.</span>
+        </div>
       </div>
-      <div class="landingpageblurb" flex layout="column" layout-align="center center">
-        <span class="md-subhead">Reach out and connect when you find a good fit.</span>
+      <div layout="row" class="explainer">
+        <div class="landingpageicon">
+          <img class="iconhome" src="images/horns.png">
+        </div>
+        <div class="landingpageblurb" layout="column">
+          <span class="blurbtext1">Match.</span>
+          <span class="blurbtext2">Hit the horns on folks you like.</span>
+        </div>
       </div>
-      <div class="landingpageicon" flex layout="column" layout-align="center center">
-        <img class="iconhome" src="images/horns.png">
-      </div>
-      <div class="landingpageblurb" flex layout="column" layout-align="center center">
-        <span class="md-subhead">Start a new project and make some new music.</span>
+      <div layout="row" class="explainer">
+        <div class="landingpageicon">
+          <img class="iconhome" src="images/pickplain.png">
+        </div>
+        <div class="landingpageblurb" layout="column">
+          <span class="blurbtext1">Start your band.</span>
+          <span class="blurbtext2">Reach out and connect when you find a good fit.</span>
+        </div>
       </div>
     </div>
   </div>
   
-  <md-divider ng-hide="profilesList.isLoggedIn"></md-divider>
+  <!--<md-divider ng-hide="profilesList.isLoggedIn"></md-divider>-->
   
   <div flex layout="column" class="center" ng-hide="profilesList.isLoggedIn">
     <div flex layout="row" layout-align="center center">
