@@ -14,8 +14,9 @@
             <span class="browseheadline2 md-headline" ui-sref="profileDetails2({ profileId: profile._id })">
               {{profile.firstName}}
             </span>
-            <a href="http://{{profile.fbUrl}}" target="_blank"><md-button class="browsesocial3 md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>
-            <a href="http://{{profile.scUrl}}" target="_blank"><md-button class="browsesocial4 md-fab md-mini md-warn"><img class="soundcloudwhite" src="images/soundcloudwhite.png"></md-button></a>
+            <a href="http://{{profile.fbUrl}}" target="_blank" ng-hide="!profile.fbUrl"><md-button class="browsesocial3 md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>
+            <a href="http://{{profile.bcUrl}}" target="_blank" ng-hide="!profile.bcUrl"><md-button class="browsesocial4 md-fab md-mini md-primary"><img class="bandcampwhite" src="images/bandcampwhite.png"></md-button></a>
+            <a href="http://{{profile.scUrl}}" target="_blank" ng-hide="!profile.scUrl"><md-button class="browsesocial4 md-fab md-mini md-warn"><img class="soundcloudwhite" src="images/soundcloudwhite.png"></md-button></a>
           </div>
         </md-card-title-text>
       </md-card-title>
@@ -34,7 +35,7 @@
       </md-card-content>
         
       <md-card-actions>
-        <div layout="row" layout-align="center center">
+        <div layout="row" layout-align="center center" class="cardbuttons">
           <!--<img class="spotifysmall" src="images/spotifyblack.png">-->
           <md-button ui-sref="surveyDetails({ profileId: profile._id })" class="md-fab"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
           <div layout="row" class="matchresponsebuttons">
