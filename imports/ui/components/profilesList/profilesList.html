@@ -7,8 +7,16 @@
     <h2>+</h2>
     <img class="amphome" src="images/amplifier.png">
   </div>
-  <div class="landingpage2" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+  <div class="landingpage2" flex layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
     <span class="md-headline">Be your own favorite band.</span>
+  </div>
+  <div class="landingpageactions" layout="column" layout-align="center center">
+    <md-button class="md-raised md-accent" ui-sref="promo">
+      Get Started
+    </md-button>
+    <md-button class="md-raised" ui-sref="login">
+      Login
+    </md-button>
   </div>
   
   <!--<md-divider ng-hide="profilesList.isLoggedIn"></md-divider>-->
@@ -79,17 +87,17 @@
     </div>
   </div>
   
-  <!--<md-divider ng-hide="profilesList.isLoggedIn"></md-divider>-->
-  
-  <div flex layout="column" class="center" ng-hide="profilesList.isLoggedIn">
-    <div flex layout="row" layout-align="center center">
-      <h2 ui-sref="promo" id="promoprompt">Enter your promo code</h2>
-    </div>
-    <h3>or</h3>
-    <div flex layout="row" layout-align="center center">
-      <h2 ui-sref="login" id="loginprompt">Log in to create a profile!</h2>
-    </div>
+  <div class="landingpage6" layout="column">
+    <span class="landingendheadline md-headline">Starting a band is hard work.</span>
+    <p class="missionstatement2">
+      Let's be honest. Online classified ads and social media groups are as much of a crapshoot as
+      flyers on the walls at concert venues and music stores. The right people for the band you want
+      are out there. Find them here.
+      <br><br>
+      <strong>Take luck out of the equation with Seeking.</strong>
+    </p>
   </div>
+  
   
   <md-divider ng-hide="profilesList.isLoggedIn"></md-divider>
   
@@ -98,7 +106,7 @@
     <a href="http://twitter.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/twblack.png"></a>
   </div>
   
-  <div class="small" ng-hide="profilesList.isLoggedIn" layout="row" layout-align="center center">&copy; 2016 Seeking LLC, all rights reserved</div>
+  <div class="small" ng-hide="profilesList.isLoggedIn" layout="row" layout-align="center center">&copy; 2017 Seeking LLC, all rights reserved</div>
 
   <div ng-hide="!profilesList.isLoggedIn" flex layout="column">
     <!--<md-card dir-paginate="profile in profilesList.profiles | itemsPerPage: profilesList.perPage" total-items="profilesList.profilesCount">-->
