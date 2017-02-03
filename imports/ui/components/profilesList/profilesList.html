@@ -1,6 +1,6 @@
 <div layout="column" layout-padding>
   
-  <profile-add-button ng-show="profilesList.isLoggedIn"></profile-add-button>
+  <profile-add-button ng-show="profilesList.isLoggedIn" ng-hide="profilesList.isOwner"></profile-add-button>
   
   <div class="landingpage1" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
     <img class="phonehome" src="images/smartphone.png">
@@ -10,7 +10,7 @@
   <div class="landingpage2" flex layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
     <span class="md-headline">Be your own favorite band.</span>
   </div>
-  <div class="landingpageactions" layout="column" layout-align="center center">
+  <div class="landingpageactions" layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
     <md-button class="md-raised md-accent" ui-sref="promo">
       Get Started
     </md-button>
@@ -87,7 +87,7 @@
     </div>
   </div>
   
-  <div class="landingpage6" layout="column">
+  <div class="landingpage6" layout="column" ng-hide="profilesList.isLoggedIn">
     <span class="landingendheadline md-headline">Starting a band is hard work.</span>
     <p class="missionstatement2">
       Let's be honest. Online classified ads and social media groups are as much of a crapshoot as
@@ -97,9 +97,6 @@
       <strong>Take luck out of the equation with Seeking.</strong>
     </p>
   </div>
-  
-  
-  <md-divider ng-hide="profilesList.isLoggedIn"></md-divider>
   
   <div class="smedia-icon-container" ng-hide="profilesList.isLoggedIn">
     <a href="http://facebook.com/seekingmusicapp" target="_blank"><img class="smedia-icon" src="images/fbblack.png"></a>
