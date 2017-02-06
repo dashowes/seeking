@@ -8,7 +8,7 @@
       <!--<img class="amphome" src="images/amplifier.png">-->
     </div>
     <div class="landingpage2" flex layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
-      <span class="md-headline">Be your own favorite band.</span>
+      <span class="tagline md-headline">Be your own favorite band.</span>
     </div>
     <div class="landingpageactions" layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
       <md-button class="md-raised md-accent" ui-sref="promo">
@@ -64,7 +64,7 @@
         </div>
         <div class="landingpageblurb" layout="column">
           <span class="blurbtext1">Seek.</span>
-          <span class="blurbtext2">Find other musicians like you, around you.</span>
+          <span class="blurbtext2">Find other musicians like you around you.</span>
         </div>
       </div>
       <div layout="row" class="explainer">
@@ -73,18 +73,18 @@
         </div>
         <div class="landingpageblurb" layout="column">
           <span class="blurbtext1">Match.</span>
-          <span class="blurbtext2">Hit the horns on folks you like.</span>
+          <span class="blurbtext2">Hit the horns on folks you like, reach out, and get together.</span>
         </div>
       </div>
-      <div layout="row" class="explainer">
-        <div class="landingpageicon">
-          <img class="iconhome" src="images/pickplain.png">
-        </div>
-        <div class="landingpageblurb" layout="column">
-          <span class="blurbtext1">Start your band.</span>
-          <span class="blurbtext2">Reach out and connect when you find a good fit.</span>
-        </div>
-      </div>
+      <!--<div layout="row" class="explainer">-->
+      <!--  <div class="landingpageicon">-->
+      <!--    <img class="iconhome" src="images/pickplain.png">-->
+      <!--  </div>-->
+      <!--  <div class="landingpageblurb" layout="column">-->
+      <!--    <span class="blurbtext1">Start your band.</span>-->
+      <!--    <span class="blurbtext2">Reach out and connect when you find a good fit.</span>-->
+      <!--  </div>-->
+      <!--</div>-->
     </div>
   </div>
   
@@ -117,10 +117,10 @@
       <md-card-title>
         <md-card-title-text>
           <div flex layout="row">
-            <span class="browseheadline md-headline" ui-sref="profileDetails({ profileId: profile._id })">
+            <span class="browseheadline md-headline">
               {{profile.firstName}}
             </span>
-            <a href="http://{{profile.fbUrl}}" target="_blank" ng-hide="!profile.fbUrl"><md-button class="browsesocial md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>
+            <!--<a href="http://{{profile.fbUrl}}" target="_blank" ng-hide="!profile.fbUrl"><md-button class="browsesocial md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>-->
             <a href="http://{{profile.bcUrl}}" target="_blank" ng-hide="!profile.bcUrl"><md-button class="browsesocial2 md-fab md-mini md-primary"><img class="bandcampwhite" src="images/bandcampwhite.png"></md-button></a>
             <a href="http://{{profile.scUrl}}" target="_blank" ng-hide="!profile.scUrl"><md-button class="browsesocial2 md-fab md-mini md-warn"><img class="soundcloudwhite" src="images/soundcloudwhite.png"></md-button></a>
           </div>
@@ -143,7 +143,7 @@
       <md-card-actions>
         <div layout="row" layout-align="center center" class="cardbuttons">
           <!--<img class="spotify" src="images/spotifyblack.png">-->
-          <md-button class="md-fab" ui-sref="profiles3({ profileId: profile._id })"><img class="pickiconbig" src="images/pickplain.png"></md-icon></md-button>
+          <md-button class="md-fab"  ui-sref="profileDetails({ profileId: profile._id })"><img class="pickiconbig" src="images/pickplain.png"></md-icon></md-button>
           <md-button ui-sref="survey1({ profileId: profile._id })" class="md-fab"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
           <!--<img class="soundcloud" src="images/soundcloudblack.png">-->
         </div>
