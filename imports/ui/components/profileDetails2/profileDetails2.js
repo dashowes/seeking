@@ -49,6 +49,7 @@ class ProfileDetails2 {
       $set: {
         firstName: this.profile.firstName,
         lastName: this.profile.lastName,
+        lookingFor: this.profile.lookingFor,
         instrument1: this.profile.instrument1,
         instrument2: this.profile.instrument2,
         city: this.profile.city,
@@ -57,6 +58,9 @@ class ProfileDetails2 {
         bio: this.profile.bio,
         favGenres: this.profile.favGenres,
         favBands: this.profile.favBands,
+        fbUrl: this.profile.fbUrl,
+        scUrl: this.profile.scUrl,
+        bcUrl: this.profile.bcUrl,
         public: this.profile.public,
         location: this.profile.location
       }

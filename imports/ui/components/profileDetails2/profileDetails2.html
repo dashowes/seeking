@@ -3,6 +3,8 @@
     <div flex layout="column" class="detailscontent">
         <span class="md-headline">{{profileDetails2.profile.firstName}}</span>
         <md-divider class="detailsdivider"></md-divider>
+        <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.lookingFor">Seeking</span>
+        <span class="md-subhead">{{profileDetails2.profile.lookingFor}}</span>
         <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.age">Age</span>
         <span class="md-subhead">{{profileDetails2.profile.age}}</span>
         <span class="detailsheader md-subhead" ng-hide="!profileDetails2.profile.city">City</span>
