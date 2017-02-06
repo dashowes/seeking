@@ -5,7 +5,7 @@
     <div ng-hide="!profilesList3.isLoggedIn" flex layout="column">
       <!--<md-card dir-paginate="profile in profilesList2.profiles | itemsPerPage: profilesList2.perPage" total-items="profilesList.profilesCount">-->
       <!--<md-card ng-repeat="profile in profilesList3.profiles | filter:{ response: matchResponseUsers.type }" ng-show="!profilesList3.isOwner(profile)">-->
-      <md-card ng-repeat="profile in profilesList3.profiles | filter:{ response: matchResponse.isYes() }" ng-show="!profilesList3.isOwner(profile)">
+      <md-card ng-repeat="profile in profilesList3.profiles" ng-show="!profilesList3.isOwner(profile)">
       <!--<img src="images/jch.jpg" class="md-card-image" alt="{{profile.firstName}}">-->
       <profile-image images="profile.images"></profile-image>
       <md-card-title>

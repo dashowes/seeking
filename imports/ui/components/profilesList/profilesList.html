@@ -1,22 +1,23 @@
 <div layout="column" layout-padding>
   
   <profile-add-button ng-show="profilesList.isLoggedIn" ng-hide="profilesList.isOwner"></profile-add-button>
-  
-  <div class="landingpage1" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
-    <img class="phonehome" src="images/smartphone.png">
-    <h2>+</h2>
-    <img class="amphome" src="images/amplifier.png">
-  </div>
-  <div class="landingpage2" flex layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
-    <span class="md-headline">Be your own favorite band.</span>
-  </div>
-  <div class="landingpageactions" layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
-    <md-button class="md-raised md-accent" ui-sref="promo">
-      Get Started
-    </md-button>
-    <md-button class="md-raised" ui-sref="login">
-      Login
-    </md-button>
+  <div class="landingpage" flex layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+    <div class="landingpage1" flex layout gt-xs="row" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+      <!--<img class="phonehome" src="images/smartphone.png">-->
+      <!--<h2>+</h2>-->
+      <!--<img class="amphome" src="images/amplifier.png">-->
+    </div>
+    <div class="landingpage2" flex layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+      <span class="md-headline">Be your own favorite band.</span>
+    </div>
+    <div class="landingpageactions" layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn">
+      <md-button class="md-raised md-accent" ui-sref="promo">
+        Get Started
+      </md-button>
+      <md-button class="md-raised" ui-sref="login">
+        Login
+      </md-button>
+    </div>
   </div>
   
   <!--<md-divider ng-hide="profilesList.isLoggedIn"></md-divider>-->
@@ -86,6 +87,8 @@
       </div>
     </div>
   </div>
+  
+  <div class="landingpage7" flex layout="column" layout-align="center center" ng-hide="profilesList.isLoggedIn"></div>
   
   <div class="landingpage6" layout="column" ng-hide="profilesList.isLoggedIn">
     <span class="landingendheadline md-headline">Starting a band is hard work.</span>

@@ -19,6 +19,7 @@ import { name as MatchResponsesList } from '../matchResponsesList/matchResponses
 import { name as MatchResponseUsers } from '../matchResponseUsers/matchResponseUsers';
 import { name as ProfileImage } from '../profileImage/profileImage';
 import { name as TakeSurveyButton } from '../takeSurveyButton/takeSurveyButton';
+import { name as DisplayNameFilter } from '../../filters/displayNameFilter';
  
 class ProfilesList3 {
   constructor($scope, $reactive) {
