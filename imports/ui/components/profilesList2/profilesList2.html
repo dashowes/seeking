@@ -16,12 +16,12 @@
       <md-card-title>
         <md-card-title-text>
           <div flex layout="row">
-            <span class="browseheadline2 md-headline">
+            <span flex class="browseheadline2 md-headline">
               {{profile.firstName}}
             </span>
             <!--<a href="http://{{profile.fbUrl}}" target="_blank" ng-hide="!profile.fbUrl"><md-button class="browsesocial3 md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>-->
-            <a href="http://{{profile.bcUrl}}" target="_blank" ng-hide="!profile.bcUrl"><md-button class="browsesocial4 md-fab md-mini md-primary"><img class="bandcampwhite" src="images/bandcampwhite.png"></md-button></a>
-            <a href="http://{{profile.scUrl}}" target="_blank" ng-hide="!profile.scUrl"><md-button class="browsesocial4 md-fab md-mini md-warn"><img class="soundcloudwhite" src="images/soundcloudwhite.png"></md-button></a>
+            <a href="{{profile.bcUrl}}" target="_blank" ng-hide="!profile.bcUrl"><md-button class="browsesocial4 md-fab md-mini md-primary"><img class="bandcampwhite" src="images/bandcampwhite.png"></md-button></a>
+            <a href="{{profile.scUrl}}" target="_blank" ng-hide="!profile.scUrl"><md-button class="browsesocial4 md-fab md-mini md-warn"><img class="soundcloudwhite" src="images/soundcloudwhite.png"></md-button></a>
           </div>
         </md-card-title-text>
       </md-card-title>
@@ -31,7 +31,7 @@
             <!--<span class="browselabel" ng-hide="!profile.age">Age</span>-->
             <span class="browsetext">{{profile.age}}</span>
             <!--<span class="browselabel" ng-hide="!profile.city">City</span>-->
-            <span class="browsetext">{{profile.city}}, {{profile.state}}</span>
+            <span class="browsetext">{{profile.city}}<span ng-hide="!profile.state">,</span> {{profile.state}}</span>
             <!--<span class="browselabel" ng-hide="!profile.instrument1">Instruments</span>-->
             <span class="browsetext">{{profile.instrument1}}<span ng-hide="!profile.instrument2">,</span> {{profile.instrument2}}</span>
             <!--<span class="browselabel" id="biolabel" ng-hide="!profile.bio">Bio</span>-->
@@ -46,7 +46,7 @@
           <md-button ui-sref="surveyDetails({ profileId: profile._id })" class="md-fab"><md-icon md-svg-icon="social:ic_poll_24px"></md-button>
           <div layout="row" class="matchresponsebuttons">
             <md-button class="md-fab" ui-sref="profileDetails2({ profileId: profile._id })"><img class="pickiconbig" src="images/pickplain.png"></md-icon></md-button>
-            <a href="http://{{profile.fbUrl}}" target="_blank" ng-hide="!profile.fbUrl"><md-button ng-show="profilesList2.isLoggedIn" class="hornsbutton md-fab"><img class="hornsiconbig" src="images/horns.png"></md-icon></md-button></a>
+            <a href="{{profile.fbUrl}}" target="_blank" ng-hide="!profile.fbUrl"><md-button ng-show="profilesList2.isLoggedIn" class="hornsbutton md-fab"><img class="hornsiconbig" src="images/horns.png"></md-icon></md-button></a>
             <!--<md-button ng-show="profilesList2.isLoggedIn" class="md-fab md-mini"><img class="msgiconsmall" src="images/msgbubb.png"></md-button>-->
           </div>
           <!--<img class="soundcloudsmall" src="images/soundcloudblack.png">-->

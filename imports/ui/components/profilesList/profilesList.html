@@ -117,7 +117,7 @@
       <md-card-title>
         <md-card-title-text>
           <div flex layout="row">
-            <span class="browseheadline md-headline">
+            <span flex class="browseheadline md-headline">
               {{profile.firstName}}
             </span>
             <!--<a href="http://{{profile.fbUrl}}" target="_blank" ng-hide="!profile.fbUrl"><md-button class="browsesocial md-fab md-mini md-primary"><img class="fbwhite" src="images/fbwhite.png"></md-button></a>-->
@@ -132,7 +132,7 @@
             <!--<span class="browselabel" ng-hide="!profile.age">Age</span>-->
             <span class="browsetext">{{profile.age}}</span>
             <!--<span class="browselabel" ng-hide="!profile.city">City</span>-->
-            <span class="browsetext">{{profile.city}}, {{profile.state}}</span>
+            <span class="browsetext">{{profile.city}}<span ng-hide="!profile.state">,</span> {{profile.state}}</span>
             <!--<span class="browselabel" ng-hide="!profile.instrument1">Instruments</span>-->
             <span class="browsetext">{{profile.instrument1}}<span ng-hide="!profile.instrument2">,</span> {{profile.instrument2}}</span>
             <!--<span class="browselabel" id="biolabel" ng-hide="!profile.bio">Bio</span>-->
