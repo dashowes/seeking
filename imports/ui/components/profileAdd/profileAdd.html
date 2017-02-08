@@ -15,13 +15,19 @@
     <label>
       City
     </label>
-    <input type="text" ng-model="profileAdd.profile.city"/>
+    <input type="text" ng-model="profileAdd.profile.city" required/>
   </md-input-container>
   <md-input-container class="detailsinput">
     <label>
       State
     </label>
-    <input type="text" ng-model="profileAdd.profile.state"/>
+    <input type="text" ng-model="profileAdd.profile.state" required/>
+  </md-input-container>
+  <md-input-container class="detailsinput">
+    <label>
+      Facebook URL (include whole URL!)
+    </label>
+    <input type="text" ng-model="profileAdd.profile.fbUrl" required/>
   </md-input-container>
   <div flex layout="row" layout-align="center center">
     <div flex class="addaction" layout-align="center center">
